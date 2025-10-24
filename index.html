@@ -785,93 +785,229 @@
 
     <main class="main-wrapper">
 
-      <!-- ============================================ -->
-      <!-- HERO SECTION - BRAND FOCUSED -->
-      <!-- ============================================ -->
-      <section class="section_home-hero padding-section-large" id="home" style="position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center;">
+<!-- ============================================ -->
+<!-- HERO SECTION - BRAND FOCUSED -->
+<!-- ============================================ -->
+<section class="section_home-hero padding-section-large" id="home" style="position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center;">
 
-        <!-- Particles Background -->
-        <div id="particles-js"></div>
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
 
-        <div class="padding-global" style="width: 100%;">
-          <div class="container-large text-align-center">
+  <div class="padding-global" style="width: 100%;">
+    <div class="container-large text-align-center">
 
-            <!-- Hero Section - Personal Brand Focus -->
-            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+<!-- ============================================ -->
+<!-- HERO SECTION - ULTIMATE BRAND SHOWCASE -->
+<!-- ============================================ -->
+<div style="text-align: center; max-width: 1000px; margin: 0 auto; position: relative; z-index: 10;">
 
-              <!-- Brand Logo/Name with Animation -->
-              <div style="margin-bottom: 25px;">
-                <h1 class="hero-title" style="font-size: 3.5rem; font-weight: 800; color: #ff9900; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; text-shadow: 0 0 30px rgba(255,153,0,0.3);">
-                  PixelTraivo
-                </h1>
-                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, transparent, #ff9900, transparent); margin: 0 auto;"></div>
-              </div>
+  <!-- Floating Badge - "Available for Hire" -->
+  <div class="availability-badge" style="display: inline-block; background: linear-gradient(135deg, rgba(0,255,0,0.15), rgba(0,200,0,0.05)); border: 2px solid rgba(0,255,0,0.4); border-radius: 50px; padding: 10px 25px; margin-bottom: 30px; animation: floatBadge 3s ease-in-out infinite; backdrop-filter: blur(10px);">
+    <span style="display: inline-block; width: 8px; height: 8px; background: #00ff00; border-radius: 50%; margin-right: 10px; animation: pulse 2s infinite; box-shadow: 0 0 10px #00ff00;"></span>
+    <span style="color: #00ff00; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.5px;">Available for Projects</span>
+  </div>
 
-              <!-- Tagline -->
-              <p style="font-size: 1.3rem; color: #ccc; font-weight: 400; margin-bottom: 20px; letter-spacing: 1px;">
-                Transforming Raw Footage into Compelling Stories
-              </p>
+  <!-- Brand Logo/Name with Premium Animation -->
+  <div style="margin-bottom: 35px; position: relative;">
+    <h1 class="hero-title" style="font-size: 4.5rem; font-weight: 900; background: linear-gradient(135deg, #ff9900 0%, #ffbb00 50%, #ff9900 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; position: relative; display: inline-block; animation: titleGlow 3s ease-in-out infinite;">
+      PixelTraivo
+      <!-- Decorative Stars -->
+      <span style="position: absolute; top: -10px; right: -30px; font-size: 1.5rem; color: #ff9900; animation: twinkle 2s ease-in-out infinite;">✨</span>
+      <span style="position: absolute; bottom: -10px; left: -25px; font-size: 1.2rem; color: #ffbb00; animation: twinkle 2.5s ease-in-out infinite;">⭐</span>
+    </h1>
+    
+    <!-- Animated Underline -->
+    <div style="width: 120px; height: 5px; background: linear-gradient(90deg, transparent, #ff9900, #ffbb00, #ff9900, transparent); margin: 0 auto; border-radius: 10px; box-shadow: 0 0 20px rgba(255,153,0,0.5); animation: expandLine 2s ease-in-out infinite;"></div>
+  </div>
 
-              <!-- Smooth GSAP Loop Text -->
-              <p id="loop-text" class="hero-subtitle" style="font-size: 1.8rem; font-weight: 600; color: #fff; height: 2rem; margin-bottom: 30px;"></p>
+  <!-- Professional Title with Icon -->
+  <div style="margin-bottom: 20px;">
+    <p style="font-size: 1.7rem; color: #fff; font-weight: 700; margin-bottom: 0; letter-spacing: 1.5px; line-height: 1.4; display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+      <span style="color: #ff9900;">🎬</span>
+      Cinematic Video Editor
+      <span style="color: #666;">|</span>
+      Motion Graphics Designer
+      <span style="color: #ff9900;">✨</span>
+    </p>
+  </div>
 
-              <!-- Value Proposition -->
-              <p class="hero-description" style="font-size: 1.1rem; color: #aaa; max-width: 750px; margin: 0 auto 40px; line-height: 1.8;">
-                Specializing in <span style="color:#ff9900; font-weight:600;">Video Editing</span>, 
-                <span style="color:#ff9900; font-weight:600;">Motion Graphics</span>, 
-                <span style="color:#ff9900; font-weight:600;">Documentary Editing</span> & 
-                <span style="color:#ff9900; font-weight:600;">Color Grading</span>
-                <br/>
-                Helping brands & creators stand out with cinematic storytelling.
-              </p>
+  <!-- Premium Tagline -->
+  <p style="font-size: 1.35rem; color: #ddd; font-weight: 500; margin-bottom: 30px; letter-spacing: 0.8px; font-style: italic; position: relative; display: inline-block; padding: 0 30px;">
+    <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); color: #ff9900; font-size: 1.5rem;">"</span>
+    Transforming Your Vision into Cinematic Reality
+    <span style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); color: #ff9900; font-size: 1.5rem;">"</span>
+  </p>
 
-            <!-- CTA Buttons -->
-            <div class="hero-buttons" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
-              
-              <!-- Watch Showreel -->
-              <a href="#showreel" class="btn-primary" style="padding: 16px 35px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; box-shadow: 0 8px 25px rgba(255,153,0,0.3); transition: all 0.3s ease;">
-                🎬 Watch Showreel
-              </a>
-              
-              <!-- Explore Work (Better than "View Portfolio") -->
-              <a href="#portfolio" class="btn-secondary" style="padding: 16px 35px; background: #222; color: #fff; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; border: 2px solid #444; transition: all 0.3s ease;">
-                🎨 Explore Work
-              </a>
-              
-             
-              <!-- Testimonials Button -->
-              <a href="#testimonials" class="btn-testimonial" style="padding: 16px 35px; background: linear-gradient(135deg, #1a1a1a, #2a2a2a); color: #fff; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; border: 2px solid #ff9900; box-shadow: 0 8px 25px rgba(255,153,0,0.2); transition: all 0.3s ease;">
-                ⭐ What Clients Say
-              </a>
-              
-              <!-- Contact Button -->
-              <a href="#contact" class="btn-outline" style="padding: 16px 35px; border: 2px solid #ff9900; color: #ff9900; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; background: transparent; transition: all 0.3s ease;">
-                💬 Let's Collaborate
-              </a>
-              
-            </div>
+  <!-- Smooth GSAP Loop Text with Enhanced Styling -->
+  <div style="margin-bottom: 40px; min-height: 60px; display: flex; align-items: center; justify-content: center;">
+    <p id="loop-text" class="hero-subtitle" style="font-size: 2rem; font-weight: 700; background: linear-gradient(135deg, #fff, #ff9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 0; text-shadow: 0 0 30px rgba(255,153,0,0.3);"></p>
+  </div>
 
-              <!-- Trust Indicators / Stats -->
-              <div class="trust-stats" style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 50px; padding-top: 40px; border-top: 1px solid #333;">
-                <div>
-                  <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">100+</h3>
-                  <p style="color: #aaa; font-size: 0.95rem;">Projects Completed</p>
-                </div>
-                <div>
-                  <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">20+</h3>
-                  <p style="color: #aaa; font-size: 0.95rem;">Happy Clients</p>
-                </div>
-                <div>
-                  <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">3+ Years</h3>
-                  <p style="color: #aaa; font-size: 0.95rem;">Experience</p>
-                </div>
-              </div>
+  <!-- Value Proposition - PREMIUM CARDS STYLE -->
+  <div style="background: linear-gradient(135deg, rgba(255,153,0,0.08), rgba(255,153,0,0.02)); border: 2px solid rgba(255,153,0,0.2); border-radius: 25px; padding: 35px 40px; margin-bottom: 50px; backdrop-filter: blur(15px); box-shadow: 0 10px 40px rgba(255,153,0,0.15); position: relative; overflow: hidden;">
+    
+    <!-- Decorative Corner Elements -->
+    <div style="position: absolute; top: -5px; left: -5px; width: 40px; height: 40px; border-top: 3px solid #ff9900; border-left: 3px solid #ff9900; border-radius: 25px 0 0 0;"></div>
+    <div style="position: absolute; bottom: -5px; right: -5px; width: 40px; height: 40px; border-bottom: 3px solid #ff9900; border-right: 3px solid #ff9900; border-radius: 0 0 25px 0;"></div>
+    
+    <p style="font-size: 1.2rem; color: #ccc; max-width: 850px; margin: 0 auto; line-height: 2; font-weight: 400;">
+      Specializing in 
+      <span style="background: linear-gradient(135deg, #ff9900, #ffbb00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; position: relative; white-space: nowrap;">
+        Trending Reels
+        <span style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff9900, transparent);"></span>
+      </span>, 
+      <span style="background: linear-gradient(135deg, #ff9900, #ffbb00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; position: relative; white-space: nowrap;">
+        Travel Films
+        <span style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff9900, transparent);"></span>
+      </span>, 
+      <span style="background: linear-gradient(135deg, #ff9900, #ffbb00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; position: relative; white-space: nowrap;">
+        Vlogs
+        <span style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff9900, transparent);"></span>
+      </span>, 
+      <span style="background: linear-gradient(135deg, #ff9900, #ffbb00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; position: relative; white-space: nowrap;">
+        Commercial Ads
+        <span style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff9900, transparent);"></span>
+      </span>, 
+      <span style="background: linear-gradient(135deg, #ff9900, #ffbb00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; position: relative; white-space: nowrap;">
+        Documentaries
+        <span style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff9900, transparent);"></span>
+      </span>, and 
+      <span style="background: linear-gradient(135deg, #ff9900, #ffbb00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; position: relative; white-space: nowrap;">
+        Talking Head Videos
+        <span style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ff9900, transparent);"></span>
+      </span>
+      <br/><br/>
+      I deliver 
+      <strong style="color: #ff9900; font-weight: 800; font-size: 1.25rem;">Cinematic Quality</strong> with expert 
+      <strong style="color: #ff9900; font-weight: 700;">Motion Graphics</strong>, 
+      <strong style="color: #ff9900; font-weight: 700;">Color Grading</strong> & 
+      <strong style="color: #ff9900; font-weight: 700;">Storytelling</strong> 
+      <br/>
+      that captivates your audience and drives <span style="color: #00ff00; font-weight: 700;">real results</span> 🚀
+    </p>
+  </div>
 
-            </div>
+</div>
 
+<!-- ============================================ -->
+<!-- ENHANCED CSS ANIMATIONS -->
+<!-- ============================================ -->
+<style>
+  /* Floating Badge Animation */
+  @keyframes floatBadge {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Pulse Animation for Status Dot */
+  @keyframes pulse {
+    0%, 100% { 
+      transform: scale(1); 
+      opacity: 1; 
+    }
+    50% { 
+      transform: scale(1.3); 
+      opacity: 0.7; 
+    }
+  }
+
+  /* Title Glow Effect */
+  @keyframes titleGlow {
+    0%, 100% { 
+      filter: drop-shadow(0 0 20px rgba(255,153,0,0.4)); 
+    }
+    50% { 
+      filter: drop-shadow(0 0 40px rgba(255,153,0,0.8)); 
+    }
+  }
+
+  /* Twinkle Stars */
+  @keyframes twinkle {
+    0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.3; transform: scale(1.2) rotate(180deg); }
+  }
+
+  /* Expanding Line Animation */
+  @keyframes expandLine {
+    0%, 100% { width: 120px; opacity: 0.8; }
+    50% { width: 150px; opacity: 1; }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.8rem !important;
+      letter-spacing: 1px !important;
+    }
+
+    #loop-text {
+      font-size: 1.5rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 2.2rem !important;
+    }
+
+    #loop-text {
+      font-size: 1.3rem !important;
+    }
+  }
+</style>
+
+
+
+
+
+      
+        <!-- CTA Buttons -->
+        <div class="hero-buttons" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+          
+          <!-- Watch Showreel -->
+          <a href="#showreel" class="btn-primary" style="padding: 16px 35px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; box-shadow: 0 8px 25px rgba(255,153,0,0.3); transition: all 0.3s ease;">
+            🎬 Watch Showreel
+          </a>
+          
+          <!-- Explore Work -->
+          <a href="#portfolio" class="btn-secondary" style="padding: 16px 35px; background: #222; color: #fff; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; border: 2px solid #444; transition: all 0.3s ease;">
+            🎨 Explore Work
+          </a>
+          
+          <!-- Testimonials Button -->
+          <a href="#testimonials" class="btn-testimonial" style="padding: 16px 35px; background: linear-gradient(135deg, #1a1a1a, #2a2a2a); color: #fff; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; border: 2px solid #ff9900; box-shadow: 0 8px 25px rgba(255,153,0,0.2); transition: all 0.3s ease;">
+            ⭐ What Clients Say
+          </a>
+          
+          <!-- Contact Button -->
+          <a href="#contact" class="btn-outline" style="padding: 16px 35px; border: 2px solid #ff9900; color: #ff9900; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; background: transparent; transition: all 0.3s ease;">
+            💬 Let's Collaborate
+          </a>
+          
+        </div>
+
+        <!-- Trust Indicators / Stats -->
+        <div class="trust-stats" style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 50px; padding-top: 40px; border-top: 1px solid #333;">
+          <div>
+            <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">100+</h3>
+            <p style="color: #aaa; font-size: 0.95rem;">Projects Completed</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">20+</h3>
+            <p style="color: #aaa; font-size: 0.95rem;">Happy Clients</p>
+          </div>
+          <div>
+            <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">3+ Years</h3>
+            <p style="color: #aaa; font-size: 0.95rem;">Experience</p>
           </div>
         </div>
-      </section>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       <!-- ============================================ -->
       <!-- SHOWREEL SECTION (HOVER TO PLAY) -->
@@ -1695,12 +1831,6 @@
 
   </script>
 
-  <!-- Local JS Files -->
-  <script src="assets/js/jquery.min.js" defer></script>
-  <script src="assets/js/webflow-main.js" defer></script>
-
-
-
 
     <!-- Content Protection -->
     <script>
@@ -1731,7 +1861,6 @@
       });
     </script>
 
-  
-
+    
 </body>
 </html>
