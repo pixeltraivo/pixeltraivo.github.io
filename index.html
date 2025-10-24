@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- SEO Meta Tags - UPDATED FOR BRAND -->
+  <title>PixelTraivo - Professional Video Editor & Motion Graphics Designer | Creative Portfolio</title>
+  <meta name="description" content="PixelTraivo - Transforming raw footage into compelling stories. Expert in video editing, motion graphics, documentary editing, and color grading. Premium free tools for creators." />
+  <meta name="keywords" content="PixelTraivo, video editor, motion graphics, documentary editing, color grading, youtube downloader, video editing tools, praveen video editor" />
+  <meta name="author" content="PixelTraivo" />
+  
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="PixelTraivo - Video Editor Portfolio" />
+  <meta property="og:description" content="Transforming raw footage into compelling visual stories" />
+  <meta property="og:image" content="assets/images/og-image.jpg" />
+  <meta property="og:url" content="https://pixeltraivo.com" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PixelTraivo - Video Editor Portfolio" />
+  <meta name="twitter:description" content="Creative video editing and motion graphics work" />
+  <meta name="twitter:image" content="assets/images/og-image.jpg" />
+  
+  <!-- Favicon - UPDATED -->
+  <link rel="shortcut icon" href="assets/images/Logo.webp" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/images/Logo.webp" />
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.0/gsap.min.js" as="script" />
+  
+  <!-- CSS -->
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  
+  <!-- Vimeo Player API -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <style>
+    /* ==================== GLOBAL STYLES ==================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+      cursor: default;
+    }
+
+    /* ==================== MOUSE CURSOR TRAIL ==================== */
+    .cursor-trail {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 153, 0, 0.8), rgba(255, 153, 0, 0.3));
+      pointer-events: none;
+      z-index: 9999;
+      animation: fadeOutTrail 0.6s forwards;
+      box-shadow: 0 0 10px rgba(255, 153, 0, 0.6);
+    }
+
+    @keyframes fadeOutTrail {
+      to {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+
+    /* ==================== LOADING ANIMATION ==================== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0e0e0e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    #preloader.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loader {
+      text-align: center;
+    }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 5px solid #333;
+      border-top-color: #ff9900;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .loader p {
+      color: #ff9900;
+      font-size: 1.3rem;
+      font-weight: 600;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* ==================== NAVBAR - ENHANCED LOGO ==================== */
+    .navbar {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .navbar.scrolled {
+      background: rgba(14, 14, 14, 0.98) !important;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 5px 25px rgba(255, 153, 0, 0.2) !important;
+    }
+
+    .navigation-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 0;
+      position: relative;
+    }
+    
+    /* LOGO ENHANCEMENT - ROUNDED CORNERS */
+    .logo {
+      border-radius: 20px; /* Rounded corners */
+      padding: 5px;
+      background: linear-gradient(135deg, rgba(255, 153, 0, 0.1), transparent);
+      border: 2px solid rgba(255, 153, 0, 0.2);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 5px 15px rgba(255, 153, 0, 0.2);
+      margin-top: 15px; /* Logo ko neeche move karega */
+    }
+    
+    .logo:hover {
+      transform: scale(1.1) translateY(-3px);
+      border-color: #ff9900;
+      box-shadow: 0 10px 30px rgba(255, 153, 0, 0.5);
+      background: linear-gradient(135deg, rgba(255, 153, 0, 0.2), rgba(255, 153, 0, 0.05));
+    }
+
+    /* ==================== HERO SECTION - FIXED SPACING ==================== */
+    .section_home-hero {
+      padding-top: 120px !important;
+      padding-bottom: 60px !important;
+    }
+
+    /* ==================== HERO ANIMATIONS ==================== */
+    @keyframes floatPic {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0; }
+      50% { transform: scale(1.3); opacity: 0.8; }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero Text Animations */
+    .hero-title {
+      animation: fadeInUp 1s ease-out 0.3s backwards;
+    }
+
+    .hero-subtitle {
+      animation: fadeInUp 1s ease-out 0.5s backwards;
+    }
+
+    .hero-description {
+      animation: fadeInUp 1s ease-out 0.7s backwards;
+    }
+
+    .hero-buttons {
+      animation: fadeInUp 1s ease-out 0.9s backwards;
+    }
+
+    /* Trust Stats Animation */
+    .trust-stats {
+      animation: fadeInUp 1s ease-out 1.1s backwards;
+    }
+
+    /* Wider Container */
+    .container-large {
+      max-width: 1400px !important;
+      padding: 0 40px !important;
+    }
+
+    /* Button Hover Effects - ENHANCED */
+    .btn-primary, .btn-secondary, .btn-outline, .btn-store {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary::before, .btn-secondary::before, .btn-outline::before, .btn-store::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    .btn-primary:hover::before, .btn-secondary:hover::before, .btn-outline:hover::before, .btn-store:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #ff8800, #ff6600);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 153, 0, 0.4);
+    }
+
+    .btn-secondary:hover {
+      background: #333;
+      border-color: #ff9900;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 153, 0, 0.2);
+    }
+
+    .btn-outline:hover {
+      background: #ff9900;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 153, 0, 0.3);
+    }
+
+    .btn-store:hover {
+      background: linear-gradient(135deg, #d4940a, #e63c0f);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(212, 148, 10, 0.4);
+    }
+
+    /* ==================== PARTICLES BACKGROUND ==================== */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      opacity: 0.3;
+    }
+
+    /* ==================== SHOWREEL SECTION ==================== */
+    .showreel-title {
+      animation: fadeInUp 1s ease-out;
+    }
+
+    /* Video Wrapper Enhanced - Hover Play Indicator */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      background-color: black;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .video-wrapper:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 60px rgba(255, 153, 0, 0.3);
+    }
+
+    .video-wrapper::before {
+      content: '▶ Hover to Play';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 153, 0, 0.9);
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      z-index: 10;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .video-wrapper:hover::before {
+      opacity: 1;
+    }
+
+    .iframe-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 20px;
+    }
+
+    /* ==================== PORTFOLIO SECTION ==================== */
+    .portfolio-video-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portfolio-video-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255, 153, 0, 0.3);
+    }
+
+    .portfolio-video-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 153, 0, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .portfolio-video-card:hover::after {
+      opacity: 1;
+    }
+
+    /* ==================== TESTIMONIALS SECTION ==================== */
+    .testimonial-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(255, 153, 0, 0.2);
+    }
+
+    /* ==================== CONTACT SECTION ==================== */
+    .form-input {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: #0e0e0e;
+      border: 2px solid #333;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #ff9900;
+      background: #1a1a1a;
+      box-shadow: 0 0 20px rgba(255, 153, 0, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .form-input::placeholder {
+      color: #666;
+    }
+
+    textarea.form-input {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #ff9900, #ff7700);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-submit::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    .btn-submit:hover::before {
+      width: 400px;
+      height: 400px;
+    }
+
+    .btn-submit:hover {
+      background: linear-gradient(135deg, #ff8800, #ff6600);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 153, 0, 0.4);
+    }
+
+    .btn-submit:active {
+      transform: translateY(-1px);
+    }
+
+    /* Contact Info Card */
+    .contact-info-card {
+      background: linear-gradient(145deg, #1a1a1a, #141414);
+      padding: 40px;
+      border-radius: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(255, 153, 0, 0.2);
+    }
+
+    .contact-info-item {
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-info-item:hover {
+      transform: translateX(5px);
+    }
+
+    /* ==================== ENHANCED FOOTER ==================== */
+    .enhanced-footer {
+      background: linear-gradient(180deg, #0e0e0e 0%, #000000 100%);
+      color: #fff;
+      padding: 60px 20px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .enhanced-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ff9900, transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-brand {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER LOGO - ROUNDED */
+    .footer-logo {
+      width: 100px;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      padding: 8px;
+      background: linear-gradient(135deg, rgba(255, 153, 0, 0.1), transparent);
+      border: 2px solid rgba(255, 153, 0, 0.2);
+      transition: all 0.3s ease;
+      animation: floatLogo 3s ease-in-out infinite;
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .footer-logo:hover {
+      transform: scale(1.1) rotate(5deg);
+      border-color: #ff9900;
+      box-shadow: 0 10px 30px rgba(255, 153, 0, 0.5);
+    }
+
+    .footer-tagline {
+      font-size: 1.1rem;
+      color: #ff9900;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .footer-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 153, 0, 0.3), transparent);
+      margin: 30px 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+    }
+
+    .footer-copyright {
+      font-size: 1rem;
+      color: #888;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-copyright:hover {
+      color: #ff9900;
+    }
+
+    .footer-copyright strong {
+      color: #ff9900;
+      font-weight: 700;
+    }
+
+    .footer-love {
+      font-size: 0.95rem;
+      color: #666;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .footer-heart {
+      color: #ff0000;
+      animation: heartbeat 1.5s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(1); }
+    }
+
+    .footer-back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #ff9900, #ff6600);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 5px 20px rgba(255, 153, 0, 0.4);
+    }
+
+    .footer-back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .footer-back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(255, 153, 0, 0.6);
+    }
+
+    .footer-back-to-top::before {
+      content: '↑';
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    /* ==================== STORE SECTION ENHANCEMENTS ==================== */
+    .store-btn-download {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .store-btn-download::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    .store-btn-download:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .store-btn-download:hover {
+      background: linear-gradient(135deg, #ff8800, #ff6600) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 153, 0, 0.4);
+    }
+
+    .store-btn-help:hover {
+      background: rgba(255, 153, 0, 0.1);
+      border-color: #ffaa00;
+      transform: translateY(-2px);
+    }
+
+    .free-tool-banner:hover {
+      border-color: #ffaa00;
+      box-shadow: 0 15px 40px rgba(255, 153, 0, 0.2);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* ==================== SCROLL ANIMATIONS ==================== */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in-up.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in-left.animate {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fade-in-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in-right.animate {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .scale-in.animate {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ==================== SECTION HEADINGS ==================== */
+    .section-heading {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #fff, #ff9900);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 992px) {
+      .section_home-showreel h2 { font-size: 36px !important; }
+      .section_home-showreel h1 { font-size: 50px !important; }
+      .contact-grid { grid-template-columns: 1fr !important; }
+      .section-heading { font-size: 2.5rem; }
+      .container-large { padding: 0 20px !important; }
+      .hero-title { font-size: 2.5rem !important; }
+      .trust-stats > div { flex-direction: column; gap: 30px !important; }
+    }
+
+    @media (max-width: 600px) {
+      .section_home-showreel h2 { font-size: 28px !important; }
+      .section_home-showreel h1 { font-size: 38px !important; }
+      .section_home-hero h1 { font-size: 2rem !important; }
+      .section_home-hero p { font-size: 1rem !important; }
+      .section-heading { font-size: 2rem; }
+      .footer-back-to-top { width: 45px; height: 45px; bottom: 20px; right: 20px; }
+      .container-large { padding: 0 15px !important; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons a { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader">
+      <div class="spinner"></div>
+      <p>Loading PixelTraivo...</p>
+    </div>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- Navbar - Enhanced Logo -->
+    <div class="navbar w-nav" role="banner" style="position: fixed; width: 100%; top: 0; z-index: 999; background: rgba(14,14,14,0.95); backdrop-filter: blur(10px);">
+      <div class="padding-global">
+        <div class="navigation-wrapper">
+          <!-- Brand Logo - Centered with Rounded Corners -->
+          <a href="#home" class="brand w-nav-brand" aria-label="PixelTraivo Home">
+            <img src="assets/images/Logo.webp" loading="lazy" width="90" alt="PixelTraivo Logo" class="logo" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main-wrapper">
+
+      <!-- ============================================ -->
+      <!-- HERO SECTION - BRAND FOCUSED -->
+      <!-- ============================================ -->
+      <section class="section_home-hero padding-section-large" id="home" style="position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center;">
+
+        <!-- Particles Background -->
+        <div id="particles-js"></div>
+
+        <div class="padding-global" style="width: 100%;">
+          <div class="container-large text-align-center">
+
+            <!-- Hero Section - Personal Brand Focus -->
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+
+              <!-- Brand Logo/Name with Animation -->
+              <div style="margin-bottom: 25px;">
+                <h1 class="hero-title" style="font-size: 3.5rem; font-weight: 800; color: #ff9900; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; text-shadow: 0 0 30px rgba(255,153,0,0.3);">
+                  PixelTraivo
+                </h1>
+                <div style="width: 80px; height: 4px; background: linear-gradient(90deg, transparent, #ff9900, transparent); margin: 0 auto;"></div>
+              </div>
+
+              <!-- Tagline -->
+              <p style="font-size: 1.3rem; color: #ccc; font-weight: 400; margin-bottom: 20px; letter-spacing: 1px;">
+                Transforming Raw Footage into Compelling Stories
+              </p>
+
+              <!-- Smooth GSAP Loop Text -->
+              <p id="loop-text" class="hero-subtitle" style="font-size: 1.8rem; font-weight: 600; color: #fff; height: 2rem; margin-bottom: 30px;"></p>
+
+              <!-- Value Proposition -->
+              <p class="hero-description" style="font-size: 1.1rem; color: #aaa; max-width: 750px; margin: 0 auto 40px; line-height: 1.8;">
+                Specializing in <span style="color:#ff9900; font-weight:600;">Video Editing</span>, 
+                <span style="color:#ff9900; font-weight:600;">Motion Graphics</span>, 
+                <span style="color:#ff9900; font-weight:600;">Documentary Editing</span> & 
+                <span style="color:#ff9900; font-weight:600;">Color Grading</span>
+                <br/>
+                Helping brands & creators stand out with cinematic storytelling.
+              </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-buttons" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+              <a href="#showreel" class="btn-primary" style="padding: 16px 35px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; box-shadow: 0 8px 25px rgba(255,153,0,0.3); transition: all 0.3s ease;">
+                🎬 Watch Showreel
+              </a>
+              <a href="#portfolio" class="btn-secondary" style="padding: 16px 35px; background: #222; color: #fff; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; border: 2px solid #444; transition: all 0.3s ease;">
+                🎨 View Portfolio
+              </a>
+              <a href="#store" class="btn-store" style="padding: 16px 35px; background: linear-gradient(135deg, #b58307, #cd370e); color: #fff; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; box-shadow: 0 8px 25px rgba(181,131,7,0.3); transition: all 0.3s ease;">
+                🛍️ Free Store
+              </a>
+              
+              <!-- NEW - Testimonials Button -->
+              <a href="#testimonials" class="btn-testimonial" style="padding: 16px 35px; background: linear-gradient(135deg, #1a1a1a, #2a2a2a); color: #fff; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; border: 2px solid #ff9900; box-shadow: 0 8px 25px rgba(255,153,0,0.2); transition: all 0.3s ease;">
+                ⭐ What Clients Say
+              </a>
+              
+              <a href="#contact" class="btn-outline" style="padding: 16px 35px; border: 2px solid #ff9900; color: #ff9900; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.1rem; background: transparent; transition: all 0.3s ease;">
+                💬 Let's Collaborate
+              </a>
+            </div>
+
+              <!-- Trust Indicators / Stats -->
+              <div class="trust-stats" style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 50px; padding-top: 40px; border-top: 1px solid #333;">
+                <div>
+                  <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">500+</h3>
+                  <p style="color: #aaa; font-size: 0.95rem;">Projects Completed</p>
+                </div>
+                <div>
+                  <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">50+</h3>
+                  <p style="color: #aaa; font-size: 0.95rem;">Happy Clients</p>
+                </div>
+                <div>
+                  <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">5+ Years</h3>
+                  <p style="color: #aaa; font-size: 0.95rem;">Experience</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SHOWREEL SECTION (HOVER TO PLAY) -->
+      <!-- ============================================ -->
+      <section class="section_home-showreel padding-section-medium" id="showreel"
+        style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background-color: #0e0e0e; color: white; padding: 80px 20px;">
+        
+        <!-- Heading -->
+        <div class="showreel-title" style="margin-bottom: 50px;">
+          <h2 style="font-size: 52px; font-weight: 700; margin: 0;">
+            <span style="color: #ccc;">Watch</span>
+            <span style="color: #ff9900;"> My </span>
+          </h2>
+          <h1 style="font-size: 70px; font-weight: 900; margin: 0;">
+            <span style="border-bottom: 5px solid orange;">Showreel</span>
+          </h1>
+        </div>
+
+        <!-- Showreel Video (Hover to Play) -->
+        <div class="video-wrapper fade-in-up" id="showreel-wrapper">
+          <div class="iframe-container">
+            <iframe 
+              id="showreel-video"
+              src="https://player.vimeo.com/video/1119697023?badge=0&autopause=0&player_id=0&app_id=58479" 
+              frameborder="0" 
+              allow="autoplay; fullscreen; picture-in-picture" 
+              allowfullscreen
+              loading="lazy"
+              title="PixelTraivo Showreel">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- PORTFOLIO SECTION -->
+      <!-- ============================================ -->
+      <section id="portfolio" class="section_home-portfolio padding-section-medium">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="w-layout-grid portfolio_wrapper">
+
+              <!-- Top Left (Vertical Video) -->
+              <div id="w-node-_9e1bef26-03ac-44c0-3697-3f715c080fb5-c5a160e1" class="fade-in-left">
+                <div class="moble-design top-left portfolio-video-card">
+                  <div class="div-block">
+                    <div style="padding-top:177.78%" class="w-video w-embed">
+                      <iframe src="https://player.vimeo.com/video/1119758094?badge=0&autopause=0&player_id=0&app_id=58479" 
+                              width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 1"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section Header -->
+              <div id="w-node-_866d0130-6b4e-4c69-d58a-f00f27eaed16-c5a160e1" class="portfolio-header scale-in">
+                <div class="h2-wrapper on_portfolio">
+                  <h2 class="h2-line-one">Videos</h2>
+                  <h2 class="h2-line-two">That Grab</h2>
+                  <div class="h2-underline-wrapper">
+                    <h2 class="h2-line-three">Attention</h2>
+                    <img src="https://cdn.prod.website-files.com/652427491a917cefc5a160de/65910fc0945adeb6ffc62b37_Frame-1.svg" 
+                         loading="lazy" width="239" alt="Underline decoration" class="element_underline" />
+                  </div>
+                  <img src="https://cdn.prod.website-files.com/652427491a917cefc5a160de/65910fc3015470c88712ba8f_Heart.svg" 
+                       loading="lazy" width="33" alt="Heart decoration" class="element_hearts" />
+                  <img src="https://cdn.prod.website-files.com/652427491a917cefc5a160de/65910fc2656dfadeef9e00b7_Sketch-annotation-element-brush-pen-icon-crown.svg" 
+                       loading="lazy" width="74" alt="Crown decoration" class="element-crown" />
+                </div>
+              </div>
+
+              <!-- Top Right (Vertical Video) -->
+              <div id="w-node-_6758ed85-23fd-38b6-785b-434532441e17-c5a160e1" class="fade-in-right">
+                <div class="moble-design top-right portfolio-video-card">
+                  <div class="div-block">
+                    <div style="padding-top:177.78%" class="w-video w-embed">
+                      <iframe src="https://player.vimeo.com/video/1119802002?badge=0&autopause=0&player_id=0&app_id=58479" 
+                              width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 2"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Left (Vertical Video) -->
+              <div id="w-node-b781291c-51c4-d8e5-47c6-c6477913bdc5-c5a160e1" class="fade-in-left">
+                <div class="moble-design bottom-left portfolio-video-card">
+                  <div class="div-block">
+                    <div style="padding-top:177.78%" class="w-video w-embed">
+                      <iframe src="https://player.vimeo.com/video/1119801356?badge=0&autopause=0&player_id=0&app_id=58479" 
+                              width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 3"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom (Horizontal Video) -->
+              <div id="w-node-_61560c02-32cd-6e68-2eb0-f9256d900ad1-c5a160e1" class="div-block-7 fade-in-up">
+                <div class="moble-design bottom portfolio-video-card">
+                  <div class="div-block">
+                    <div style="padding-top:56.25%" class="w-video w-embed">
+                      <iframe src="https://player.vimeo.com/video/1119702101?badge=0&autopause=0&player_id=0&app_id=58479" 
+                              width="940" height="529" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 4"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Right (Vertical Video) -->
+              <div id="w-node-df24fde1-c6c9-a74a-51c0-e36f83a26c13-c5a160e1" class="fade-in-right">
+                <div class="moble-design bottom-right portfolio-video-card">
+                  <div class="div-block">
+                    <div style="padding-top:177.78%" class="w-video w-embed">
+                      <iframe src="https://player.vimeo.com/video/1119801313?badge=0&autopause=0&player_id=0&app_id=58479" 
+                              width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 5"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- ============================================ -->
+<!-- TESTIMONIALS SECTION -->
+<!-- ============================================ -->
+
+<section id="testimonials" style="background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); padding: 80px 20px; color: #fff; position: relative; overflow: hidden;">
+  
+  <div style="max-width: 1400px; margin: 0 auto; text-align: center;">
+    
+    <h2 style="font-size: 3rem; margin-bottom: 20px; color: #fff;">
+      What <span style="color: #ff9900;">Clients Say</span>
+    </h2>
+    
+    <p style="color: #aaa; font-size: 1.1rem; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto;">
+      Don't just take my word for it - hear from satisfied clients
+    </p>
+    
+    <!-- Horizontal Scroll Container -->
+    <div style="overflow: hidden; position: relative; margin: 0 -20px;">
+      
+      <div class="testimonials-track" style="display: flex; gap: 25px; animation: scroll-testimonials 35s linear infinite;">
+      
+        <!-- Testimonial 1 - Naman Upadhyay -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Praveen's editing skills transformed our brand videos. The attention to detail and creativity is outstanding!"
+          </p>
+          
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Avatar -->
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">
+              N
+            </div>
+            <!-- Name & Role -->
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
+                Naman Upadhyay
+              </div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">
+                Content Creator
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 - Crypter -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Professional, creative, and always delivers on time. Highly recommend for any video project!"
+          </p>
+          
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Avatar -->
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">
+              C
+            </div>
+            <!-- Name & Role -->
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
+                Crypter
+              </div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">
+                YouTuber
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 - Shivam -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Exceptional motion graphics work! Praveen understood our vision perfectly and exceeded expectations."
+          </p>
+          
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Avatar -->
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">
+              S
+            </div>
+            <!-- Name & Role -->
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
+                Shivam
+              </div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">
+                Filmmaker
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 - Umar -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Outstanding video editing and color grading! Praveen's work elevated our content to a whole new level."
+          </p>
+          
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Avatar -->
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">
+              U
+            </div>
+            <!-- Name & Role -->
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
+                Umar
+              </div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">
+                Digital Marketer
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 - Abdullah -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Amazing experience working with Praveen! Fast turnaround, creative ideas, and top-notch quality every time."
+          </p>
+          
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Avatar -->
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">
+              A
+            </div>
+            <!-- Name & Role -->
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
+                Abdullah
+              </div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">
+                Business Owner
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DUPLICATE FOR SEAMLESS SCROLL -->
+
+        <!-- Testimonial 1 - Naman Upadhyay -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Praveen's editing skills transformed our brand videos. The attention to detail and creativity is outstanding!"
+          </p>
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">N</div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Naman Upadhyay</div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">Content Creator</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 - Crypter -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Professional, creative, and always delivers on time. Highly recommend for any video project!"
+          </p>
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">C</div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Crypter</div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">YouTuber</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 - Shivam -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Exceptional motion graphics work! Praveen understood our vision perfectly and exceeded expectations."
+          </p>
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">S</div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Shivam</div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">Filmmaker</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 - Umar -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Outstanding video editing and color grading! Praveen's work elevated our content to a whole new level."
+          </p>
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">U</div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Umar</div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">Digital Marketer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 - Abdullah -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Amazing experience working with Praveen! Fast turnaround, creative ideas, and top-notch quality every time."
+          </p>
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">A</div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Abdullah</div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">Business Owner</div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<style>
+  @keyframes scroll-testimonials {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .testimonials-track:hover {
+    animation-play-state: paused;
+  }
+</style>
+
+      <!-- ============================================ -->
+      <!-- FREE STORE SECTION -->
+      <!-- ============================================ -->
+      <section id="store" style="background: linear-gradient(180deg, #0e0e0e 0%, #111 100%); padding: 80px 20px; color: #fff; position: relative; overflow: hidden;">
+        
+        <!-- Background Effects -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 50%, rgba(255, 153, 0, 0.05), transparent 70%); pointer-events: none;"></div>
+        
+        <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 1;">
+          
+          <!-- Section Header -->
+          <div style="text-align: center; margin-bottom: 50px;">
+            <span style="display: inline-block; padding: 8px 20px; background: rgba(255, 153, 0, 0.1); border: 1px solid rgba(255, 153, 0, 0.3); border-radius: 50px; color: #ff9900; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">
+              🆓 FREE RESOURCES
+            </span>
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px; background: linear-gradient(135deg, #fff, #ff9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+              PixelTraivo <span style="color: #ff9900; -webkit-text-fill-color: #ff9900;">Store</span>
+            </h2>
+            <p style="color: #aaa; font-size: 1rem; max-width: 600px; margin: 0 auto 15px;">
+              Professional editing tools & resources - Absolutely FREE for the community
+            </p>
+          </div>
+
+          <!-- Free Tool Banner (YouTube Downloader) -->
+          <div class="free-tool-banner fade-in-up" style="background: linear-gradient(135deg, #1a1a1a, #0e0e0e); border-radius: 20px; padding: 40px; border: 2px solid #ff9900; position: relative; overflow: hidden; transition: all 0.3s ease;">
+            
+            <!-- Animated Background -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 70% 50%, rgba(255, 153, 0, 0.1), transparent 60%); pointer-events: none;"></div>
+            
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; position: relative; z-index: 1;">
+              
+              <!-- Left Content -->
+              <div>
+                <div style="display: inline-block; padding: 6px 15px; background: rgba(255, 153, 0, 0.2); border-radius: 20px; font-size: 0.8rem; font-weight: 600; color: #ff9900; margin-bottom: 15px;">
+                  FREE & OPEN SOURCE
+                </div>
+                <h3 style="font-size: 2rem; margin-bottom: 15px; color: #fff; font-weight: 700;">
+                  🎬 YouTube Downloader for macOS
+                </h3>
+                <p style="color: #aaa; font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
+                  Modern YouTube downloader built with Python. Download videos in 1080p or extract MP3 audio with real-time progress tracking.
+                </p>
+                
+                <!-- Features -->
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 25px;">
+                  <div style="display: flex; align-items: center; gap: 10px; color: #ccc;">
+                    <span style="color: #ff9900; font-size: 1.2rem;">✓</span>
+                    <span>Real-time progress</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; color: #ccc;">
+                    <span style="color: #ff9900; font-size: 1.2rem;">✓</span>
+                    <span>1080p downloads</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; color: #ccc;">
+                    <span style="color: #ff9900; font-size: 1.2rem;">✓</span>
+                    <span>MP3 extraction</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; color: #ccc;">
+                    <span style="color: #ff9900; font-size: 1.2rem;">✓</span>
+                    <span>Clean dark UI</span>
+                  </div>
+                </div>
+                
+                <!-- Buttons -->
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                  <a href="https://github.com/pixeltraivo/PixelTraivo-YT-Downloader/releases" target="_blank" rel="noopener noreferrer" class="store-btn-download" style="padding: 14px 30px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 1.3rem;">⬇️</span>
+                    Download Free
+                  </a>
+                  <a href="https://github.com/pixeltraivo/PixelTraivo-YT-Downloader" target="_blank" rel="noopener noreferrer" class="store-btn-help" style="padding: 14px 30px; border: 2px solid #ff9900; color: #ff9900; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 1.3rem;">💻</span>
+                    View on GitHub
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Right Preview (CLICKABLE) -->
+              <div style="text-align: center; min-width: 200px;">
+                <a href="https://github.com/pixeltraivo/PixelTraivo-YT-Downloader/releases" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: inline-block;">
+                  <div style="width: 150px; height: 150px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 40px rgba(255, 153, 0, 0.3); animation: float 3s ease-in-out infinite; cursor: pointer; transition: all 0.3s ease;">
+                    <span style="font-size: 5rem; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));">📥</span>
+                  </div>
+                </a>
+                <div style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
+                  <img src="https://img.shields.io/github/stars/pixeltraivo/PixelTraivo-YT-Downloader?style=social" alt="GitHub stars" loading="lazy" />
+                  <img src="https://img.shields.io/github/forks/pixeltraivo/PixelTraivo-YT-Downloader?style=social" alt="GitHub forks" loading="lazy" />
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- CONTACT SECTION -->
+      <!-- ============================================ -->
+      <section id="contact" style="background:#0e0e0e; padding:80px 20px; color:#fff;">
+        <div class="container-medium" style="max-width:1000px; margin:0 auto;">
+          <h2 class="section-heading" style="text-align:center; margin-bottom:20px;">
+            Let's <span style="color:#ff9900;">Connect</span>
+          </h2>
+          <p style="color:#aaa; font-size:1.1rem; text-align:center; margin-bottom:50px;" class="fade-in-up">
+            Have a project in mind? Let's discuss how I can help bring your vision to life
+          </p>
+          
+          <div class="contact-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;">
+            
+            <!-- Contact Form -->
+            <form id="contactForm" action="https://formspree.io/f/xyznrknv" method="POST" class="fade-in-left" style="background:#1a1a1a; padding:40px; border-radius:20px;">
+              <input type="text" name="name" placeholder="Your Name" required class="form-input" />
+              <input type="email" name="email" placeholder="Your Email" required class="form-input" />
+              <textarea name="message" placeholder="Your Message" rows="5" required class="form-input"></textarea>
+              <button type="submit" class="btn-submit">Send Message 📩</button>
+            </form>
+            
+            <!-- Quick Reach -->
+            <div class="contact-info-card fade-in-right">
+              <h3 style="font-size:1.8rem; margin-bottom:30px; color:#ff9900;">Quick Reach</h3>
+              
+              <div class="contact-info-item">
+                <strong style="color:#ff9900;">📱 WhatsApp:</strong><br/>
+                <a href="https://wa.me/918815720085" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none; font-size:1.1rem;">+91 88157 20085</a>
+              </div>
+              
+              <div class="contact-info-item">
+                <strong style="color:#ff9900;">📧 Email:</strong><br/>
+                <a href="mailto:pixeltraivo@gmail.com" style="color:#fff; text-decoration:none; font-size:1.1rem;">pixeltraivo@gmail.com</a>
+              </div>
+              
+              <div class="contact-info-item">
+                <strong style="color:#ff9900;">📱 Telegram:</strong><br/>
+                <a href="https://t.me/pixeltraivo" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none; font-size:1.1rem;">@pixeltraivo</a>
+              </div>
+              
+              <div class="contact-info-item">
+                <strong style="color:#ff9900;">📸 Instagram:</strong><br/>
+                <a href="https://www.instagram.com/PIXELTRAIVO" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none; font-size:1.1rem;">@PIXELTRAIVO</a>
+              </div>
+              
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============================================ -->
+    <!-- ENHANCED FOOTER -->
+    <!-- ============================================ -->
+    <footer class="enhanced-footer">
+      <div class="footer-content">
+        
+        <!-- Brand Section -->
+        <div class="footer-brand">
+          <img src="assets/images/Logo.webp" alt="PixelTraivo Logo" class="footer-logo" />
+          <div class="footer-tagline">Crafting Visual Stories</div>
+          <p style="color:#888; font-size:0.95rem; max-width:500px; margin:0 auto;">
+            Transforming ideas into captivating visuals through expert video editing and motion graphics.
+          </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            © 2025 <strong>PixelTraivo</strong>. All Rights Reserved.
+          </p>
+          <div class="footer-love">
+            Made with <span class="footer-heart">❤️</span> for Creative Storytelling
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="footer-back-to-top" id="backToTop"></div>
+
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SCRIPTS -->
+  <!-- ============================================ -->
+  
+  <!-- GSAP for Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.0/gsap.min.js" defer></script>
+  
+  <!-- Particles.js for Background -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  
+  <!-- Main JavaScript -->
+  <script>
+    // ============================================
+    // PRELOADER
+    // ============================================
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').classList.add('hide');
+      }, 800);
+    });
+
+    // ============================================
+    // MOUSE CURSOR TRAIL EFFECT
+    // ============================================
+    let mouseX = 0;
+    let mouseY = 0;
+    let isMoving = false;
+    let moveTimeout;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      
+      clearTimeout(moveTimeout);
+      isMoving = true;
+      
+      createTrail(mouseX, mouseY);
+      
+      moveTimeout = setTimeout(() => {
+        isMoving = false;
+      }, 50);
+    });
+
+    function createTrail(x, y) {
+      const trail = document.createElement('div');
+      trail.className = 'cursor-trail';
+      trail.style.left = x + 'px';
+      trail.style.top = y + 'px';
+      
+      document.body.appendChild(trail);
+      
+      setTimeout(() => {
+        trail.remove();
+      }, 600);
+    }
+
+    // ============================================
+    // VIMEO PLAYER - HOVER TO PLAY/PAUSE
+    // ============================================
+    window.addEventListener('load', () => {
+      const showreelWrapper = document.getElementById('showreel-wrapper');
+      const showreelIframe = document.getElementById('showreel-video');
+      
+      if (showreelIframe && typeof Vimeo !== 'undefined') {
+        const player = new Vimeo.Player(showreelIframe);
+        
+        showreelWrapper.addEventListener('mouseenter', () => {
+          player.play().catch(error => {
+            console.log('Play error:', error);
+          });
+        });
+        
+        showreelWrapper.addEventListener('mouseleave', () => {
+          player.pause().catch(error => {
+            console.log('Pause error:', error);
+          });
+        });
+      }
+    });
+
+    // ============================================
+    // SMOOTH SCROLLING
+    // ============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // ============================================
+    // BACK TO TOP BUTTON
+    // ============================================
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // ============================================
+    // GSAP TEXT ANIMATION
+    // ============================================
+    document.addEventListener("DOMContentLoaded", () => {
+      const phrases = ["Video Editor", "Motion Graphics Artist", "Documentary Editor", "Color Grading Expert"];
+      const loopText = document.getElementById("loop-text");
+      let i = 0;
+
+      function showNextPhrase() {
+        loopText.textContent = phrases[i];
+        
+        gsap.fromTo(loopText, 
+          {opacity:0, y:20}, 
+          {opacity:1, y:0, duration:0.8, ease:"power3.out", onComplete:()=>{
+            gsap.to(loopText, {opacity:0, y:-20, duration:0.6, delay:2, ease:"power3.in", onComplete:()=>{
+              i = (i + 1) % phrases.length;
+              showNextPhrase();
+            }});
+          }}
+        );
+      }
+
+      showNextPhrase();
+    });
+
+    // ============================================
+    // PARTICLES.JS INITIALIZATION
+    // ============================================
+    window.addEventListener('load', () => {
+      if (typeof particlesJS !== 'undefined') {
+        particlesJS("particles-js", {
+          "particles": {
+            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#ff9900" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.6, "random": true },
+            "size": { "value": 3, "random": true },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,
+              "color": "#ff9900",
+              "opacity": 0.3,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 1.5,
+              "direction": "none",
+              "random": true,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": { "enable": true, "mode": "grab" },
+              "onclick": { "enable": true, "mode": "push" },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 140,
+                "line_linked": { "opacity": 0.5 }
+              },
+              "push": { "particles_nb": 4 }
+            }
+          },
+          "retina_detect": true
+        });
+      }
+    });
+
+    // ============================================
+    // SCROLL ANIMATIONS
+    // ============================================
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // ============================================
+    // NAVBAR SCROLL EFFECT
+    // ============================================
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+  </script>
+
+  <!-- Local JS Files -->
+  <script src="assets/js/jquery.min.js" defer></script>
+  <script src="assets/js/webflow-main.js" defer></script>
+
+</body>
+</html>
