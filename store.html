@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PixelTraivo Store - Free Tools & Resources</title>
+  <title>PixelTraivo Store - Free Tools & LUTs Collection</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Free YouTube downloader and professional editing tools by PixelTraivo. Download videos in 4K quality and extract MP3 audio.">
-  <meta name="keywords" content="YouTube downloader, free video downloader, 4K video download, MP3 extractor, PixelTraivo">
+  <meta name="description" content="Free YouTube downloader, FREE professional LUTs collection, and editing tools by PixelTraivo. Download videos in 4K quality and get cinematic color grading LUTs.">
+  <meta name="keywords" content="YouTube downloader, free video downloader, 4K video download, MP3 extractor, free LUTs, color grading, cinematic LUTs, PixelTraivo">
   
   <!-- Favicon -->
   <link rel="shortcut icon" href="assets/images/Logo.webp" type="image/x-icon" />
@@ -96,11 +96,35 @@
       border-color: #999;
     }
 
+    /* LUTs Card Hover */
+    .lut-card {
+      transition: all 0.3s ease;
+    }
+
+    .lut-card:hover {
+      transform: translateY(-8px);
+      border-color: #ff9900 !important;
+      box-shadow: 0 15px 40px rgba(255, 153, 0, 0.3);
+    }
+
+    .btn-lut-download {
+      transition: all 0.3s ease;
+    }
+
+    .btn-lut-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 153, 0, 0.5);
+    }
+
     /* Responsive */
     @media (max-width: 1024px) {
       .free-tool-banner > div > div {
         grid-template-columns: 1fr !important;
         gap: 35px !important;
+      }
+
+      .luts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
       }
     }
 
@@ -117,6 +141,10 @@
       .logo {
         width: 60px;
       }
+
+      .luts-grid {
+        grid-template-columns: 1fr !important;
+      }
     }
   </style>
 </head>
@@ -130,7 +158,9 @@
       </a>
       <div class="nav-links">
         <a href="index.html">🏠 Home</a>
-        <a href="index.html#portfolio">🎨 Explore Work</a>
+        <a href="#free-tools">🆓 Free Tools</a>
+        <a href="#luts-collection">🎨 Free LUTs</a>
+        <a href="#coming-soon">🚀 Coming Soon</a>
         <a href="index.html#contact">💬 Contact</a>
       </div>
     </div>
@@ -140,9 +170,9 @@
   <div class="main-content">
     
     <!-- ============================================ -->
-    <!-- FREE STORE SECTION -->
+    <!-- FREE TOOLS SECTION -->
     <!-- ============================================ -->
-    <section id="store" style="background: linear-gradient(180deg, #0e0e0e 0%, #111 100%); padding: 60px 20px; color: #fff; position: relative; overflow: hidden;">
+    <section id="free-tools" style="background: linear-gradient(180deg, #0e0e0e 0%, #111 100%); padding: 60px 20px; color: #fff; position: relative; overflow: hidden;">
       
       <!-- Background Effects -->
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 50%, rgba(255, 153, 0, 0.05), transparent 70%); pointer-events: none;"></div>
@@ -155,10 +185,10 @@
             🆓 FREE RESOURCES
           </span>
           <h2 style="font-size: 2.5rem; margin-bottom: 12px; background: linear-gradient(135deg, #fff, #ff9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;">
-            PixelTraivo <span style="color: #ff9900; -webkit-text-fill-color: #ff9900;">Store</span>
+            Free Tools
           </h2>
           <p style="color: #aaa; font-size: 1rem; max-width: 650px; margin: 0 auto;">
-            Professional editing tools & resources - Absolutely FREE for the community
+            Professional editing tools - Absolutely FREE for the community
           </p>
         </div>
 
@@ -320,6 +350,372 @@
 
       </div>
     </section>
+
+    <!-- ============================================ -->
+    <!-- FREE LUTS COLLECTION SECTION -->
+    <!-- ============================================ -->
+    <section id="luts-collection" style="background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); padding: 80px 20px; position: relative; overflow: hidden;">
+      
+      <!-- Decorative Background -->
+      <div style="position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: radial-gradient(circle at 70% 30%, rgba(255, 153, 0, 0.08), transparent 60%); pointer-events: none;"></div>
+      
+      <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 1;">
+        
+        <!-- Section Header -->
+        <div style="text-align: center; margin-bottom: 60px;">
+          <span style="display: inline-block; padding: 6px 18px; background: rgba(0, 255, 0, 0.1); border: 1px solid rgba(0, 255, 0, 0.3); border-radius: 50px; color: #00ff00; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">
+            🎁 100% FREE COLLECTION
+          </span>
+          <h2 style="font-size: 3rem; margin-bottom: 15px; background: linear-gradient(135deg, #fff, #ff9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;">
+            Professional LUTs Collection
+          </h2>
+          <p style="color: #aaa; font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+            Cinematic color grading LUTs used in my projects. Download instantly from Google Drive - No signup required!
+          </p>
+        </div>
+
+        <!-- LUTs Grid -->
+        <div class="luts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 50px;">
+
+          <!-- LUT Card 1: Cinematic & Film -->
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+              🆓 FREE
+            </div>
+            
+            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">🎬</div>
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Cinematic & Film</h3>
+            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+              Professional film emulation LUTs for that classic cinematic look. Includes 4 premium packs.
+            </p>
+            
+            <div style="margin-bottom: 25px;">
+              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">4 LUT Packs Included</span>
+            </div>
+            
+            <a href="https://drive.google.com/file/d/170wT_m1Dkhaq6dzDZQJBNL82_J50xpBj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+              Download Free 📥
+            </a>
+          </div>
+
+          <!-- LUT Card 2: Wedding & Events -->
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+              🆓 FREE
+            </div>
+            
+            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">💍</div>
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Wedding & Events</h3>
+            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+              Romantic and elegant LUTs perfect for weddings, engagements, and special events.
+            </p>
+            
+            <div style="margin-bottom: 25px;">
+              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">2 LUT Packs Included</span>
+            </div>
+            
+            <a href="https://drive.google.com/file/d/15CCEEz2gy1nwi3IGHpXtFOPkrlHoTWNp/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+              Download Free 📥
+            </a>
+          </div>
+
+          <!-- LUT Card 3: Fashion & Commercial -->
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+              🆓 FREE
+            </div>
+            
+            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">👗</div>
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Fashion & Commercial</h3>
+            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+              High-end fashion and commercial grade LUTs for brand content and advertising.
+            </p>
+            
+            <div style="margin-bottom: 25px;">
+              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">Premium Pack</span>
+            </div>
+            
+            <a href="https://drive.google.com/file/d/1zhLw30b8H9gtiiCE3b3l5XIDGOG2P8gT/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+              Download Free 📥
+            </a>
+          </div>
+
+          <!-- LUT Card 4: Color Grades -->
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ff6600, #ff3300); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #fff; font-weight: 700;">
+              HOT 🔥
+            </div>
+            
+            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">🎨</div>
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Color Grades</h3>
+            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+              Teal & Orange + 70 Professional CGC LUTs for stunning color grading.
+            </p>
+            
+            <div style="margin-bottom: 25px;">
+              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">72 LUTs Total</span>
+            </div>
+            
+            <a href="https://drive.google.com/file/d/1WbpO6C7o8TRUihZjh-d063XfHnPERYpj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+              Download Free 📥
+            </a>
+          </div>
+
+          <!-- LUT Card 5: Action & Sports -->
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+              🆓 FREE
+            </div>
+            
+            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">🏍️</div>
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Action & Sports</h3>
+            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+              Dynamic LUTs perfect for bike montages, sports videos, and high-energy content.
+            </p>
+            
+            <div style="margin-bottom: 25px;">
+              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">Action Pack</span>
+            </div>
+            
+            <a href="https://drive.google.com/file/d/1yblFsKvd9-lS1sF-5v6jKaLlOdwiiK3m/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+              Download Free 📥
+            </a>
+          </div>
+
+          <!-- LUT Card 6: Creator Packs -->
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+              🆓 FREE
+            </div>
+            
+            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">👤</div>
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Creator Signature</h3>
+            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+              9 unique creator packs from AKR, Aruz, QAZI, Shivam Bhalla, VS & more!
+            </p>
+            
+            <div style="margin-bottom: 25px;">
+              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">9 Creator Packs</span>
+            </div>
+            
+            <a href="https://drive.google.com/file/d/1BnccAxunUbfA4iLiwjBnllGlAXXVyLv6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+              Download Free 📥
+            </a>
+          </div>
+
+          <!-- LUT Card 7: Free Bonus -->
+          <div class="lut-card" style="background: linear-gradient(135deg, rgba(0,255,0,0.15), rgba(0,200,0,0.05)); border: 2px solid rgba(0,255,0,0.4); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.3); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+              🎁 BONUS
+            </div>
+            
+            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(0,255,0,0.3));">🎁</div>
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Free Bonus Pack</h3>
+            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+              Extra bonus LUTs collection with premium presets. Perfect starter pack!
+            </p>
+            
+            <div style="margin-bottom: 25px;">
+              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">Bonus Collection</span>
+            </div>
+            
+            <a href="https://drive.google.com/file/d/1CsGJoGbkWOnL2CY-rPj1xDRvA2G6Mi4R/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #00cc00, #009900); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+              Download Free 🎉
+            </a>
+          </div>
+
+          <!-- LUT Card 8: Mega Bundle -->
+          <div class="lut-card" style="background: linear-gradient(135deg, rgba(255,153,0,0.15), rgba(255,153,0,0.05)); border: 2px solid #ff9900; border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ff9900, #ff6600); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #fff; font-weight: 700;">
+              ALL-IN-ONE 🔥
+            </div>
+            
+            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.5));">📦</div>
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Mega LUTs Bundle</h3>
+            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+              Complete collection! All 8 categories in one download. Save time & storage!
+            </p>
+            
+            <div style="margin-bottom: 25px;">
+              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">Everything Included</span>
+            </div>
+            
+            <a href="https://drive.google.com/file/d/1PDqa28KXpa8FZUXULq8sxPgsNIwJBftJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff6600); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+              Download All 🚀
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Download Info -->
+        <div style="text-align: center; background: linear-gradient(135deg, rgba(255,153,0,0.08), rgba(255,153,0,0.02)); border: 2px solid rgba(255,153,0,0.2); border-radius: 18px; padding: 35px; max-width: 800px; margin: 0 auto;">
+          <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 20px; font-weight: 700;">📥 How to Download</h3>
+          <p style="color: #aaa; font-size: 1rem; line-height: 1.7; margin-bottom: 15px;">
+            Click any "Download Free" button above to open the Google Drive link. Click the download icon to save the ZIP file to your computer.
+          </p>
+          <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">
+            ✅ No signup required • ✅ Instant access • ✅ Direct download from Google Drive
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+<!-- ============================================ -->
+<!-- COMING SOON SECTION -->
+<!-- ============================================ -->
+<section id="coming-soon" style="background: linear-gradient(180deg, #0a0a0a 0%, #0e0e0e 100%); padding: 80px 20px; position: relative; overflow: hidden;">
+  
+  <!-- Animated Background -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 50%, rgba(138, 43, 226, 0.08), transparent 60%); pointer-events: none;"></div>
+  
+  <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 1;">
+    
+    <!-- Section Header -->
+    <div style="text-align: center; margin-bottom: 60px;">
+      <span style="display: inline-block; padding: 6px 18px; background: rgba(138, 43, 226, 0.1); border: 1px solid rgba(138, 43, 226, 0.3); border-radius: 50px; color: #8a2be2; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; animation: pulse 2s infinite;">
+        🚀 COMING SOON
+      </span>
+      <h2 style="font-size: 3rem; margin-bottom: 15px; background: linear-gradient(135deg, #fff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;">
+        More Resources On The Way
+      </h2>
+      <p style="color: #aaa; font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+        Exciting new presets, plugins, and transitions are in development. Stay tuned!
+      </p>
+    </div>
+
+    <!-- Coming Soon Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+      <!-- Card 1: Text Presets -->
+      <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 18px; padding: 40px; text-align: center; position: relative; overflow: hidden; transition: all 0.3s ease;">
+        
+        <!-- Shimmer Effect -->
+        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite;"></div>
+        
+        <div style="position: relative; z-index: 1;">
+          <div style="font-size: 4rem; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">✨</div>
+          <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">Text Presets</h3>
+          <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+            Animated text presets for Premiere Pro & After Effects. Professional titles made easy.
+          </p>
+          <div style="display: inline-block; padding: 10px 25px; background: rgba(138, 43, 226, 0.2); border-radius: 25px; color: #8a2be2; font-weight: 600; font-size: 0.9rem;">
+            🔜 In Development
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Caption Presets -->
+      <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 18px; padding: 40px; text-align: center; position: relative; overflow: hidden; transition: all 0.3s ease;">
+        
+        <!-- Shimmer Effect -->
+        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite 0.5s;"></div>
+        
+        <div style="position: relative; z-index: 1;">
+          <div style="font-size: 4rem; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">💬</div>
+          <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">Caption Text Presets</h3>
+          <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+            Trending caption styles for Reels & YouTube Shorts. Auto-animated & customizable.
+          </p>
+          <div style="display: inline-block; padding: 10px 25px; background: rgba(138, 43, 226, 0.2); border-radius: 25px; color: #8a2be2; font-weight: 600; font-size: 0.9rem;">
+            🔜 In Development
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Transitions -->
+      <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 18px; padding: 40px; text-align: center; position: relative; overflow: hidden; transition: all 0.3s ease;">
+        
+        <!-- Shimmer Effect -->
+        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite 1s;"></div>
+        
+        <div style="position: relative; z-index: 1;">
+          <div style="font-size: 4rem; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">🎞️</div>
+          <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">Transitions Pack</h3>
+          <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+            Smooth, cinematic transitions for seamless editing. Compatible with all major editors.
+          </p>
+          <div style="display: inline-block; padding: 10px 25px; background: rgba(138, 43, 226, 0.2); border-radius: 25px; color: #8a2be2; font-weight: 600; font-size: 0.9rem;">
+            🔜 In Development
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Plugins -->
+      <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 18px; padding: 40px; text-align: center; position: relative; overflow: hidden; transition: all 0.3s ease;">
+        
+        <!-- Shimmer Effect -->
+        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite 1.5s;"></div>
+        
+        <div style="position: relative; z-index: 1;">
+          <div style="font-size: 4rem; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">🔌</div>
+          <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">Editing Plugins</h3>
+          <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+            Powerful plugins to speed up your workflow. Effects, tools, and automation scripts.
+          </p>
+          <div style="display: inline-block; padding: 10px 25px; background: rgba(138, 43, 226, 0.2); border-radius: 25px; color: #8a2be2; font-weight: 600; font-size: 0.9rem;">
+            🔜 In Development
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Notify CTA -->
+    <div style="text-align: center; margin-top: 60px; background: linear-gradient(135deg, rgba(138, 43, 226, 0.08), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.2); border-radius: 18px; padding: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Want to Get Notified?</h3>
+      <p style="color: #aaa; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">
+        Be the first to know when these resources launch. Follow me on Instagram or join my Telegram channel!
+      </p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/PIXELTRAIVO" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: linear-gradient(135deg, #E1306C, #C13584); color: #fff; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 18px rgba(225, 48, 108, 0.3);">
+          <span>📸</span>
+          <span>Follow on Instagram</span>
+        </a>
+        <a href="https://t.me/pixeltraivo" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: linear-gradient(135deg, #0088cc, #006699); color: #fff; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 18px rgba(0, 136, 204, 0.3);">
+          <span>✈️</span>
+          <span>Join Telegram</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Animations -->
+<style>
+  @keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+
+  .coming-soon-card:hover {
+    transform: translateY(-5px);
+    border-color: #8a2be2;
+    box-shadow: 0 15px 40px rgba(138, 43, 226, 0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .coming-soon-card {
+      padding: 30px !important;
+    }
+  }
+</style>
+
 
   </div>
 
