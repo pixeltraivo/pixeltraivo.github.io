@@ -26,14 +26,14 @@
       overflow-x: hidden;
     }
 
-    /* Navbar */
+    /* ==================== NAVBAR ==================== */
     .navbar {
       position: fixed;
       top: 0;
       width: 100%;
       background: rgba(14, 14, 14, 0.95);
       backdrop-filter: blur(15px);
-      padding: 15px 0;
+      padding: 12px 0;
       z-index: 999;
       border-bottom: 1px solid rgba(255, 153, 0, 0.2);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -42,14 +42,14 @@
     .navbar-content {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 0 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .logo {
-      width: 80px;
+      width: 70px;
       border-radius: 15px;
       transition: transform 0.3s ease;
     }
@@ -58,31 +58,66 @@
       transform: scale(1.05);
     }
 
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
     .nav-links a {
       color: #fff;
       text-decoration: none;
-      margin-left: 30px;
       font-weight: 600;
-      transition: color 0.3s ease;
+      font-size: 0.85rem;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
       color: #ff9900;
+      background: rgba(255, 153, 0, 0.1);
     }
 
     /* Main Content */
     .main-content {
-      padding-top: 100px;
+      padding-top: 80px;
       min-height: 100vh;
     }
 
-    /* Float Animation */
+    /* Section Containers */
+    .section-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ==================== ANIMATIONS ==================== */
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
 
-    /* Button Hover Effects */
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+
+    /* ==================== BUTTONS ==================== */
+    .download-btn-windows,
+    .download-btn-macos,
+    .btn-lut-download {
+      transition: all 0.3s ease;
+      min-height: 48px;
+    }
+
     .download-btn-windows:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(0, 120, 212, 0.6);
@@ -96,8 +131,14 @@
       border-color: #999;
     }
 
-    /* LUTs Card Hover */
-    .lut-card {
+    .btn-lut-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 153, 0, 0.5);
+    }
+
+    /* ==================== CARDS ==================== */
+    .lut-card,
+    .coming-soon-card {
       transition: all 0.3s ease;
     }
 
@@ -107,43 +148,193 @@
       box-shadow: 0 15px 40px rgba(255, 153, 0, 0.3);
     }
 
-    .btn-lut-download {
-      transition: all 0.3s ease;
+    .coming-soon-card:hover {
+      transform: translateY(-5px);
+      border-color: #8a2be2;
+      box-shadow: 0 15px 40px rgba(138, 43, 226, 0.3);
     }
 
-    .btn-lut-download:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(255, 153, 0, 0.5);
-    }
-
-    /* Responsive */
+    /* ==================== RESPONSIVE BREAKPOINTS ==================== */
+    
+    /* Large Tablets & Small Laptops */
     @media (max-width: 1024px) {
-      .free-tool-banner > div > div {
+      .tool-content-grid {
         grid-template-columns: 1fr !important;
-        gap: 35px !important;
+        gap: 30px !important;
+      }
+
+      .download-section {
+        position: relative !important;
+        top: auto !important;
+        max-width: 400px;
+        margin: 0 auto;
       }
 
       .luts-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
       }
+
+      .coming-soon-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+      }
     }
 
+    /* Tablets */
+    @media (max-width: 768px) {
+      .section-container {
+        padding: 0 15px;
+      }
+
+      .section-title {
+        font-size: 2rem !important;
+      }
+
+      .section-subtitle {
+        font-size: 0.95rem !important;
+      }
+
+      .card-title {
+        font-size: 1.4rem !important;
+      }
+
+      .tool-banner {
+        padding: 30px 20px !important;
+      }
+
+      .installation-guide {
+        padding: 15px !important;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* Mobile Phones */
     @media (max-width: 640px) {
       .navbar-content {
-        padding: 0 20px;
+        padding: 0 15px;
       }
 
       .nav-links a {
-        margin-left: 15px;
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+        padding: 6px 8px;
       }
 
       .logo {
-        width: 60px;
+        width: 55px;
       }
 
-      .luts-grid {
+      .main-content {
+        padding-top: 70px;
+      }
+
+      .section-padding {
+        padding: 40px 15px !important;
+      }
+
+      .section-title {
+        font-size: 1.8rem !important;
+      }
+
+      .section-subtitle {
+        font-size: 0.9rem !important;
+      }
+
+      .tool-title {
+        font-size: 1.5rem !important;
+      }
+
+      .tool-description {
+        font-size: 0.95rem !important;
+      }
+
+      .luts-grid,
+      .coming-soon-grid {
         grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+
+      .lut-card,
+      .coming-soon-card {
+        padding: 25px 20px !important;
+      }
+
+      .card-emoji {
+        font-size: 2.5rem !important;
+      }
+
+      .card-title {
+        font-size: 1.3rem !important;
+      }
+
+      .card-description {
+        font-size: 0.9rem !important;
+        min-height: auto !important;
+      }
+
+      .price-text {
+        font-size: 1.5rem !important;
+      }
+
+      .floating-icon {
+        width: 120px !important;
+        height: 120px !important;
+      }
+
+      .floating-icon span {
+        font-size: 3.5rem !important;
+      }
+
+      .social-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .social-buttons a {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .installation-list {
+        font-size: 0.85rem !important;
+        padding-left: 20px !important;
+      }
+    }
+
+    /* Small Phones */
+    @media (max-width: 375px) {
+      .nav-links a {
+        font-size: 0.7rem;
+        padding: 5px 6px;
+      }
+
+      .section-title {
+        font-size: 1.6rem !important;
+      }
+
+      .tool-title {
+        font-size: 1.3rem !important;
+      }
+
+      .card-title {
+        font-size: 1.2rem !important;
+      }
+
+      .lut-card,
+      .coming-soon-card {
+        padding: 20px 15px !important;
+      }
+    }
+
+    /* Landscape Mobile */
+    @media (max-width: 896px) and (orientation: landscape) {
+      .main-content {
+        padding-top: 60px;
+      }
+
+      .section-padding {
+        padding: 30px 15px !important;
       }
     }
   </style>
@@ -158,9 +349,9 @@
       </a>
       <div class="nav-links">
         <a href="index.html">🏠 Home</a>
-        <a href="#free-tools">🆓 Free Tools</a>
-        <a href="#luts-collection">🎨 Free LUTs</a>
-        <a href="#coming-soon">🚀 Coming Soon</a>
+        <a href="#free-tools">🆓 Tools</a>
+        <a href="#luts-collection">🎨 LUTs</a>
+        <a href="#coming-soon">🚀 Soon</a>
         <a href="index.html#contact">💬 Contact</a>
       </div>
     </div>
@@ -172,69 +363,69 @@
     <!-- ============================================ -->
     <!-- FREE TOOLS SECTION -->
     <!-- ============================================ -->
-    <section id="free-tools" style="background: linear-gradient(180deg, #0e0e0e 0%, #111 100%); padding: 60px 20px; color: #fff; position: relative; overflow: hidden;">
+    <section id="free-tools" class="section-padding" style="background: linear-gradient(180deg, #0e0e0e 0%, #111 100%); padding: 60px 20px; color: #fff; position: relative; overflow: hidden;">
       
       <!-- Background Effects -->
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 50%, rgba(255, 153, 0, 0.05), transparent 70%); pointer-events: none;"></div>
       
-      <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 1;">
+      <div class="section-container" style="position: relative; z-index: 1;">
         
         <!-- Section Header -->
-        <div style="text-align: center; margin-bottom: 50px;">
-          <span style="display: inline-block; padding: 6px 18px; background: rgba(255, 153, 0, 0.1); border: 1px solid rgba(255, 153, 0, 0.3); border-radius: 50px; color: #ff9900; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <span style="display: inline-block; padding: 6px 18px; background: rgba(255, 153, 0, 0.1); border: 1px solid rgba(255, 153, 0, 0.3); border-radius: 50px; color: #ff9900; font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">
             🆓 FREE RESOURCES
           </span>
-          <h2 style="font-size: 2.5rem; margin-bottom: 12px; background: linear-gradient(135deg, #fff, #ff9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;">
+          <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 12px; background: linear-gradient(135deg, #fff, #ff9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;">
             Free Tools
           </h2>
-          <p style="color: #aaa; font-size: 1rem; max-width: 650px; margin: 0 auto;">
+          <p class="section-subtitle" style="color: #aaa; font-size: 1rem; max-width: 650px; margin: 0 auto;">
             Professional editing tools - Absolutely FREE for the community
           </p>
         </div>
 
         <!-- YouTube Downloader Tool Card -->
-        <div class="free-tool-banner" style="background: linear-gradient(135deg, #1a1a1a, #0e0e0e); border-radius: 18px; padding: 40px; border: 2px solid #ff9900; position: relative; overflow: hidden; transition: all 0.3s ease;">
+        <div class="tool-banner" style="background: linear-gradient(135deg, #1a1a1a, #0e0e0e); border-radius: 18px; padding: 35px 25px; border: 2px solid #ff9900; position: relative; overflow: hidden;">
           
           <!-- Animated Background Glow -->
           <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 70% 50%, rgba(255, 153, 0, 0.1), transparent 60%); pointer-events: none;"></div>
           
           <!-- Main Content Grid -->
-          <div style="display: grid; grid-template-columns: 1fr 260px; gap: 40px; align-items: start; position: relative; z-index: 1;">
+          <div class="tool-content-grid" style="display: grid; grid-template-columns: 1fr; gap: 35px; position: relative; z-index: 1;">
             
-            <!-- Left: Tool Information -->
+            <!-- Tool Information -->
             <div>
               
               <!-- Badge -->
-              <div style="display: inline-block; padding: 5px 14px; background: rgba(255, 153, 0, 0.2); border-radius: 18px; font-size: 0.75rem; font-weight: 600; color: #ff9900; margin-bottom: 15px;">
+              <div style="display: inline-block; padding: 5px 14px; background: rgba(255, 153, 0, 0.2); border-radius: 18px; font-size: 0.7rem; font-weight: 600; color: #ff9900; margin-bottom: 15px;">
                 🔓 FREE & OPEN SOURCE
               </div>
               
               <!-- Title -->
-              <h3 style="font-size: 2rem; margin-bottom: 15px; color: #fff; font-weight: 700; line-height: 1.2;">
+              <h3 class="tool-title" style="font-size: 1.8rem; margin-bottom: 15px; color: #fff; font-weight: 700; line-height: 1.2;">
                 🎬 YouTube Downloader
               </h3>
               
               <!-- Subtitle -->
-              <p style="color: #aaa; font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px; max-width: 700px;">
+              <p class="tool-description" style="color: #aaa; font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">
                 Modern YouTube downloader built with Python. Download videos in <strong style="color: #ff9900;">4K quality</strong> or extract <strong style="color: #ff9900;">MP3 audio</strong> with real-time progress tracking.
               </p>
               
               <!-- Features Grid -->
-              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 28px; max-width: 600px;">
-                <div style="display: flex; align-items: center; gap: 10px; color: #ccc; font-size: 0.95rem;">
-                  <span style="color: #ff9900; font-size: 1.2rem; font-weight: bold;">✓</span>
+              <div class="features-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; gap: 8px; color: #ccc; font-size: 0.9rem;">
+                  <span style="color: #ff9900; font-size: 1.1rem; font-weight: bold;">✓</span>
                   <span>Real-time progress</span>
                 </div>
-                <div style="display: flex; align-items: center; gap: 10px; color: #ccc; font-size: 0.95rem;">
-                  <span style="color: #ff9900; font-size: 1.2rem; font-weight: bold;">✓</span>
+                <div style="display: flex; align-items: center; gap: 8px; color: #ccc; font-size: 0.9rem;">
+                  <span style="color: #ff9900; font-size: 1.1rem; font-weight: bold;">✓</span>
                   <span>Up to 4K quality</span>
                 </div>
-                <div style="display: flex; align-items: center; gap: 10px; color: #ccc; font-size: 0.95rem;">
-                  <span style="color: #ff9900; font-size: 1.2rem; font-weight: bold;">✓</span>
+                <div style="display: flex; align-items: center; gap: 8px; color: #ccc; font-size: 0.9rem;">
+                  <span style="color: #ff9900; font-size: 1.1rem; font-weight: bold;">✓</span>
                   <span>MP3 extraction</span>
                 </div>
-                <div style="display: flex; align-items: center; gap: 10px; color: #ccc; font-size: 0.95rem;">
-                  <span style="color: #ff9900; font-size: 1.2rem; font-weight: bold;">✓</span>
+                <div style="display: flex; align-items: center; gap: 8px; color: #ccc; font-size: 0.9rem;">
+                  <span style="color: #ff9900; font-size: 1.1rem; font-weight: bold;">✓</span>
                   <span>Beautiful dark UI</span>
                 </div>
               </div>
@@ -243,80 +434,77 @@
               <div style="margin-bottom: 25px;">
                 <a href="https://github.com/pixeltraivo/PixelTraivo-YT-Downloader" 
                    target="_blank" rel="noopener noreferrer"
-                   style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 2px solid rgba(255, 153, 0, 0.3); color: #ff9900; border-radius: 22px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease;">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                   style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border: 2px solid rgba(255, 153, 0, 0.3); color: #ff9900; border-radius: 22px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s ease;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                   </svg>
                   <span>View on GitHub</span>
-                  <img src="https://img.shields.io/github/stars/pixeltraivo/PixelTraivo-YT-Downloader?style=social" alt="GitHub stars" loading="lazy" style="margin-left: 5px;" />
                 </a>
               </div>
 
               <!-- Installation Instructions -->
-              <div style="background: rgba(255, 153, 0, 0.05); border-left: 4px solid #ff9900; border-radius: 8px; padding: 20px;">
-                <h4 style="color: #ff9900; font-size: 1.05rem; margin-bottom: 18px; font-weight: 700;">📋 Installation Guide</h4>
+              <div class="installation-guide" style="background: rgba(255, 153, 0, 0.05); border-left: 4px solid #ff9900; border-radius: 8px; padding: 18px;">
+                <h4 style="color: #ff9900; font-size: 1rem; margin-bottom: 15px; font-weight: 700;">📋 Installation Guide</h4>
                 
                 <!-- Windows Installation -->
-                <div style="margin-bottom: 18px;">
-                  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0078D4" stroke-width="2.5">
+                <div style="margin-bottom: 15px;">
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0078D4" stroke-width="2.5">
                       <rect x="3" y="3" width="7" height="7"></rect>
                       <rect x="14" y="3" width="7" height="7"></rect>
                       <rect x="14" y="14" width="7" height="7"></rect>
                       <rect x="3" y="14" width="7" height="7"></rect>
                     </svg>
-                    <strong style="color: #0078D4; font-size: 0.95rem;">Windows:</strong>
+                    <strong style="color: #0078D4; font-size: 0.9rem;">Windows:</strong>
                   </div>
-                  <ol style="color: #aaa; font-size: 0.9rem; line-height: 1.7; margin: 0; padding-left: 28px;">
-                    <li>Download the <code style="background: rgba(255,153,0,0.1); padding: 2px 6px; border-radius: 4px; color: #ff9900;">.exe</code> file</li>
-                    <li>Double-click to run the application</li>
-                    <li>If SmartScreen appears → <strong style="color: #fff;">"More info"</strong> → <strong style="color: #fff;">"Run anyway"</strong></li>
+                  <ol class="installation-list" style="color: #aaa; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 24px;">
+                    <li>Download the .exe file</li>
+                    <li>Double-click to run</li>
+                    <li>If SmartScreen appears → "More info" → "Run anyway"</li>
                   </ol>
                 </div>
 
                 <!-- macOS Installation -->
                 <div>
-                  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#A8A8A8">
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#A8A8A8">
                       <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                     </svg>
-                    <strong style="background: linear-gradient(135deg, #A8A8A8, #888888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 0.95rem;">macOS:</strong>
+                    <strong style="color: #A8A8A8; font-size: 0.9rem;">macOS:</strong>
                   </div>
-                  <ol style="color: #aaa; font-size: 0.9rem; line-height: 1.7; margin: 0; padding-left: 28px;">
-                    <li>Download the <code style="background: rgba(255,153,0,0.1); padding: 2px 6px; border-radius: 4px; color: #ff9900;">.dmg</code> file</li>
-                    <li>Open the DMG file</li>
-                    <li>Drag the app to <strong style="color: #fff;">Applications</strong> folder</li>
-                    <li>Right-click the app → <strong style="color: #fff;">"Open"</strong> (first time only)</li>
-                    <li>Click <strong style="color: #fff;">"Open"</strong> in the security dialog</li>
-                    <li style="color: #ff9900;">Or go to <strong>System Settings → Privacy & Security</strong> → Click <strong>"Open Anyway"</strong></li>
+                  <ol class="installation-list" style="color: #aaa; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 24px;">
+                    <li>Download the .dmg file</li>
+                    <li>Open DMG and drag to Applications</li>
+                    <li>Right-click → "Open" (first time)</li>
+                    <li style="color: #ff9900;">Or: System Settings → Privacy & Security → "Open Anyway"</li>
                   </ol>
                 </div>
               </div>
               
             </div>
 
-            <!-- Right: Download Section -->
-            <div style="text-align: center; position: sticky; top: 20px;">
+            <!-- Download Section -->
+            <div class="download-section" style="text-align: center;">
               
-              <!-- Floating Icon (Non-clickable) -->
-              <div style="width: 160px; height: 160px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 32px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 12px 40px rgba(255, 153, 0, 0.4); animation: float 3s ease-in-out infinite; pointer-events: none;">
-                <span style="font-size: 5rem; filter: drop-shadow(0 6px 15px rgba(0,0,0,0.3));">📥</span>
+              <!-- Floating Icon -->
+              <div class="floating-icon" style="width: 140px; height: 140px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 28px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 12px 40px rgba(255, 153, 0, 0.4); animation: float 3s ease-in-out infinite; pointer-events: none;">
+                <span style="font-size: 4rem; filter: drop-shadow(0 6px 15px rgba(0,0,0,0.3));">📥</span>
               </div>
 
               <!-- Version Badge -->
-              <div style="display: inline-flex; align-items: center; padding: 6px 16px; background: rgba(255, 153, 0, 0.15); border: 1px solid rgba(255, 153, 0, 0.3); border-radius: 22px; color: #ff9900; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px;">
+              <div style="display: inline-flex; align-items: center; padding: 6px 14px; background: rgba(255, 153, 0, 0.15); border: 1px solid rgba(255, 153, 0, 0.3); border-radius: 20px; color: #ff9900; font-size: 0.8rem; font-weight: 600; margin-bottom: 18px;">
                 📦 v1.0.4
               </div>
 
               <!-- Download Buttons Stack -->
-              <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+              <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; max-width: 350px; margin-left: auto; margin-right: auto;">
                 
                 <!-- Windows Download -->
                 <a href="https://github.com/pixeltraivo/PixelTraivo-YT-Downloader/releases/download/v1.0.4/PixelTraivo-YT-Downloader-Windows.exe" 
                    target="_blank" rel="noopener noreferrer"
                    class="download-btn-windows" 
-                   style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 20px; background: linear-gradient(135deg, #0078D4, #0063B1); color: #fff; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 18px rgba(0, 120, 212, 0.3); width: 100%;">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                   style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 20px; background: linear-gradient(135deg, #0078D4, #0063B1); color: #fff; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 4px 18px rgba(0, 120, 212, 0.3); width: 100%;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <rect x="3" y="3" width="7" height="7"></rect>
                     <rect x="14" y="3" width="7" height="7"></rect>
                     <rect x="14" y="14" width="7" height="7"></rect>
@@ -329,8 +517,8 @@
                 <a href="https://github.com/pixeltraivo/PixelTraivo-YT-Downloader/releases/download/v1.0.4/PixelTraivo-YT-Downloader.dmg" 
                    target="_blank" rel="noopener noreferrer"
                    class="download-btn-macos" 
-                   style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 20px; background: linear-gradient(135deg, #555555, #333333); color: #fff; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4); border: 1px solid #666; width: 100%;">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                   style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 20px; background: linear-gradient(135deg, #555555, #333333); color: #fff; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4); border: 1px solid #666; width: 100%;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                   </svg>
                   <span>macOS</span>
@@ -338,9 +526,8 @@
               </div>
 
               <!-- Download Stats -->
-              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 15px; background: rgba(0,0,0,0.2); border-radius: 10px;">
-                <img src="https://img.shields.io/github/downloads/pixeltraivo/PixelTraivo-YT-Downloader/total?style=flat-square&label=Downloads&color=ff9900&labelColor=1a1a1a" alt="Total downloads" loading="lazy" style="width: 100%;" />
-                <p style="color: #888; font-size: 0.8rem; margin: 0; line-height: 1.3;">Free & Safe • No Malware</p>
+              <div style="padding: 12px; background: rgba(0,0,0,0.2); border-radius: 10px;">
+                <p style="color: #888; font-size: 0.75rem; margin: 0;">Free & Safe • No Malware</p>
               </div>
               
             </div>
@@ -354,201 +541,201 @@
     <!-- ============================================ -->
     <!-- FREE LUTS COLLECTION SECTION -->
     <!-- ============================================ -->
-    <section id="luts-collection" style="background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); padding: 80px 20px; position: relative; overflow: hidden;">
+    <section id="luts-collection" class="section-padding" style="background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); padding: 60px 20px; position: relative; overflow: hidden;">
       
       <!-- Decorative Background -->
       <div style="position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: radial-gradient(circle at 70% 30%, rgba(255, 153, 0, 0.08), transparent 60%); pointer-events: none;"></div>
       
-      <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 1;">
+      <div class="section-container" style="position: relative; z-index: 1;">
         
         <!-- Section Header -->
-        <div style="text-align: center; margin-bottom: 60px;">
-          <span style="display: inline-block; padding: 6px 18px; background: rgba(0, 255, 0, 0.1); border: 1px solid rgba(0, 255, 0, 0.3); border-radius: 50px; color: #00ff00; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <span style="display: inline-block; padding: 6px 18px; background: rgba(0, 255, 0, 0.1); border: 1px solid rgba(0, 255, 0, 0.3); border-radius: 50px; color: #00ff00; font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">
             🎁 100% FREE COLLECTION
           </span>
-          <h2 style="font-size: 3rem; margin-bottom: 15px; background: linear-gradient(135deg, #fff, #ff9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;">
+          <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 15px; background: linear-gradient(135deg, #fff, #ff9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;">
             Professional LUTs Collection
           </h2>
-          <p style="color: #aaa; font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
-            Cinematic color grading LUTs used in my projects. Download instantly from Google Drive - No signup required!
+          <p class="section-subtitle" style="color: #aaa; font-size: 1rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+            Cinematic color grading LUTs used in my projects. Download instantly from Google Drive!
           </p>
         </div>
 
         <!-- LUTs Grid -->
-        <div class="luts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 50px;">
+        <div class="luts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px;">
 
           <!-- LUT Card 1: Cinematic & Film -->
-          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 16px; padding: 28px 22px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 12px; right: 12px; background: rgba(0,255,0,0.2); padding: 6px 12px; border-radius: 18px; font-size: 0.7rem; color: #00ff00; font-weight: 700;">
               🆓 FREE
             </div>
             
-            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">🎬</div>
-            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Cinematic & Film</h3>
-            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+            <div class="card-emoji" style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">🎬</div>
+            <h3 class="card-title" style="color: #fff; font-size: 1.5rem; margin-bottom: 12px; font-weight: 700;">Cinematic & Film</h3>
+            <p class="card-description" style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; min-height: 70px;">
               Professional film emulation LUTs for that classic cinematic look. Includes 4 premium packs.
             </p>
             
-            <div style="margin-bottom: 25px;">
-              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
-              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">4 LUT Packs Included</span>
+            <div style="margin-bottom: 20px;">
+              <span class="price-text" style="color: #00ff00; font-size: 1.6rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.8rem; margin-top: 5px;">4 LUT Packs Included</span>
             </div>
             
-            <a href="https://drive.google.com/file/d/170wT_m1Dkhaq6dzDZQJBNL82_J50xpBj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+            <a href="https://drive.google.com/file/d/170wT_m1Dkhaq6dzDZQJBNL82_J50xpBj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none; text-align: center;">
               Download Free 📥
             </a>
           </div>
 
           <!-- LUT Card 2: Wedding & Events -->
-          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 16px; padding: 28px 22px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 12px; right: 12px; background: rgba(0,255,0,0.2); padding: 6px 12px; border-radius: 18px; font-size: 0.7rem; color: #00ff00; font-weight: 700;">
               🆓 FREE
             </div>
             
-            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">💍</div>
-            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Wedding & Events</h3>
-            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+            <div class="card-emoji" style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">💍</div>
+            <h3 class="card-title" style="color: #fff; font-size: 1.5rem; margin-bottom: 12px; font-weight: 700;">Wedding & Events</h3>
+            <p class="card-description" style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; min-height: 70px;">
               Romantic and elegant LUTs perfect for weddings, engagements, and special events.
             </p>
             
-            <div style="margin-bottom: 25px;">
-              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
-              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">2 LUT Packs Included</span>
+            <div style="margin-bottom: 20px;">
+              <span class="price-text" style="color: #00ff00; font-size: 1.6rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.8rem; margin-top: 5px;">2 LUT Packs Included</span>
             </div>
             
-            <a href="https://drive.google.com/file/d/15CCEEz2gy1nwi3IGHpXtFOPkrlHoTWNp/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+            <a href="https://drive.google.com/file/d/15CCEEz2gy1nwi3IGHpXtFOPkrlHoTWNp/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none; text-align: center;">
               Download Free 📥
             </a>
           </div>
 
           <!-- LUT Card 3: Fashion & Commercial -->
-          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 16px; padding: 28px 22px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 12px; right: 12px; background: rgba(0,255,0,0.2); padding: 6px 12px; border-radius: 18px; font-size: 0.7rem; color: #00ff00; font-weight: 700;">
               🆓 FREE
             </div>
             
-            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">👗</div>
-            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Fashion & Commercial</h3>
-            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+            <div class="card-emoji" style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">👗</div>
+            <h3 class="card-title" style="color: #fff; font-size: 1.5rem; margin-bottom: 12px; font-weight: 700;">Fashion & Commercial</h3>
+            <p class="card-description" style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; min-height: 70px;">
               High-end fashion and commercial grade LUTs for brand content and advertising.
             </p>
             
-            <div style="margin-bottom: 25px;">
-              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
-              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">Premium Pack</span>
+            <div style="margin-bottom: 20px;">
+              <span class="price-text" style="color: #00ff00; font-size: 1.6rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.8rem; margin-top: 5px;">Premium Pack</span>
             </div>
             
-            <a href="https://drive.google.com/file/d/1zhLw30b8H9gtiiCE3b3l5XIDGOG2P8gT/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+            <a href="https://drive.google.com/file/d/1zhLw30b8H9gtiiCE3b3l5XIDGOG2P8gT/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none; text-align: center;">
               Download Free 📥
             </a>
           </div>
 
           <!-- LUT Card 4: Color Grades -->
-          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ff6600, #ff3300); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #fff; font-weight: 700;">
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 16px; padding: 28px 22px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 12px; right: 12px; background: linear-gradient(135deg, #ff6600, #ff3300); padding: 6px 12px; border-radius: 18px; font-size: 0.7rem; color: #fff; font-weight: 700;">
               HOT 🔥
             </div>
             
-            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">🎨</div>
-            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Color Grades</h3>
-            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+            <div class="card-emoji" style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">🎨</div>
+            <h3 class="card-title" style="color: #fff; font-size: 1.5rem; margin-bottom: 12px; font-weight: 700;">Color Grades</h3>
+            <p class="card-description" style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; min-height: 70px;">
               Teal & Orange + 70 Professional CGC LUTs for stunning color grading.
             </p>
             
-            <div style="margin-bottom: 25px;">
-              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
-              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">72 LUTs Total</span>
+            <div style="margin-bottom: 20px;">
+              <span class="price-text" style="color: #00ff00; font-size: 1.6rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.8rem; margin-top: 5px;">72 LUTs Total</span>
             </div>
             
-            <a href="https://drive.google.com/file/d/1WbpO6C7o8TRUihZjh-d063XfHnPERYpj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+            <a href="https://drive.google.com/file/d/1WbpO6C7o8TRUihZjh-d063XfHnPERYpj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none; text-align: center;">
               Download Free 📥
             </a>
           </div>
 
           <!-- LUT Card 5: Action & Sports -->
-          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 16px; padding: 28px 22px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 12px; right: 12px; background: rgba(0,255,0,0.2); padding: 6px 12px; border-radius: 18px; font-size: 0.7rem; color: #00ff00; font-weight: 700;">
               🆓 FREE
             </div>
             
-            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">🏍️</div>
-            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Action & Sports</h3>
-            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+            <div class="card-emoji" style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">🏍️</div>
+            <h3 class="card-title" style="color: #fff; font-size: 1.5rem; margin-bottom: 12px; font-weight: 700;">Action & Sports</h3>
+            <p class="card-description" style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; min-height: 70px;">
               Dynamic LUTs perfect for bike montages, sports videos, and high-energy content.
             </p>
             
-            <div style="margin-bottom: 25px;">
-              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
-              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">Action Pack</span>
+            <div style="margin-bottom: 20px;">
+              <span class="price-text" style="color: #00ff00; font-size: 1.6rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.8rem; margin-top: 5px;">Action Pack</span>
             </div>
             
-            <a href="https://drive.google.com/file/d/1yblFsKvd9-lS1sF-5v6jKaLlOdwiiK3m/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+            <a href="https://drive.google.com/file/d/1yblFsKvd9-lS1sF-5v6jKaLlOdwiiK3m/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none; text-align: center;">
               Download Free 📥
             </a>
           </div>
 
           <!-- LUT Card 6: Creator Packs -->
-          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+          <div class="lut-card" style="background: linear-gradient(135deg, #1a1a1a, #0f0f0f); border: 2px solid rgba(0,255,0,0.3); border-radius: 16px; padding: 28px 22px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 12px; right: 12px; background: rgba(0,255,0,0.2); padding: 6px 12px; border-radius: 18px; font-size: 0.7rem; color: #00ff00; font-weight: 700;">
               🆓 FREE
             </div>
             
-            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">👤</div>
-            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Creator Signature</h3>
-            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+            <div class="card-emoji" style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.3));">👤</div>
+            <h3 class="card-title" style="color: #fff; font-size: 1.5rem; margin-bottom: 12px; font-weight: 700;">Creator Signature</h3>
+            <p class="card-description" style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; min-height: 70px;">
               9 unique creator packs from AKR, Aruz, QAZI, Shivam Bhalla, VS & more!
             </p>
             
-            <div style="margin-bottom: 25px;">
-              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
-              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">9 Creator Packs</span>
+            <div style="margin-bottom: 20px;">
+              <span class="price-text" style="color: #00ff00; font-size: 1.6rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.8rem; margin-top: 5px;">9 Creator Packs</span>
             </div>
             
-            <a href="https://drive.google.com/file/d/1BnccAxunUbfA4iLiwjBnllGlAXXVyLv6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+            <a href="https://drive.google.com/file/d/1BnccAxunUbfA4iLiwjBnllGlAXXVyLv6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #ff9900, #ff7700); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none; text-align: center;">
               Download Free 📥
             </a>
           </div>
 
           <!-- LUT Card 7: Free Bonus -->
-          <div class="lut-card" style="background: linear-gradient(135deg, rgba(0,255,0,0.15), rgba(0,200,0,0.05)); border: 2px solid rgba(0,255,0,0.4); border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,255,0,0.3); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #00ff00; font-weight: 700;">
+          <div class="lut-card" style="background: linear-gradient(135deg, rgba(0,255,0,0.15), rgba(0,200,0,0.05)); border: 2px solid rgba(0,255,0,0.4); border-radius: 16px; padding: 28px 22px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 12px; right: 12px; background: rgba(0,255,0,0.3); padding: 6px 12px; border-radius: 18px; font-size: 0.7rem; color: #00ff00; font-weight: 700;">
               🎁 BONUS
             </div>
             
-            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(0,255,0,0.3));">🎁</div>
-            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Free Bonus Pack</h3>
-            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+            <div class="card-emoji" style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 0 10px rgba(0,255,0,0.3));">🎁</div>
+            <h3 class="card-title" style="color: #fff; font-size: 1.5rem; margin-bottom: 12px; font-weight: 700;">Free Bonus Pack</h3>
+            <p class="card-description" style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; min-height: 70px;">
               Extra bonus LUTs collection with premium presets. Perfect starter pack!
             </p>
             
-            <div style="margin-bottom: 25px;">
-              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
-              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">Bonus Collection</span>
+            <div style="margin-bottom: 20px;">
+              <span class="price-text" style="color: #00ff00; font-size: 1.6rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.8rem; margin-top: 5px;">Bonus Collection</span>
             </div>
             
-            <a href="https://drive.google.com/file/d/1CsGJoGbkWOnL2CY-rPj1xDRvA2G6Mi4R/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #00cc00, #009900); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+            <a href="https://drive.google.com/file/d/1CsGJoGbkWOnL2CY-rPj1xDRvA2G6Mi4R/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #00cc00, #009900); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none; text-align: center;">
               Download Free 🎉
             </a>
           </div>
 
           <!-- LUT Card 8: Mega Bundle -->
-          <div class="lut-card" style="background: linear-gradient(135deg, rgba(255,153,0,0.15), rgba(255,153,0,0.05)); border: 2px solid #ff9900; border-radius: 18px; padding: 35px; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #ff9900, #ff6600); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; color: #fff; font-weight: 700;">
+          <div class="lut-card" style="background: linear-gradient(135deg, rgba(255,153,0,0.15), rgba(255,153,0,0.05)); border: 2px solid #ff9900; border-radius: 16px; padding: 28px 22px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 12px; right: 12px; background: linear-gradient(135deg, #ff9900, #ff6600); padding: 6px 12px; border-radius: 18px; font-size: 0.7rem; color: #fff; font-weight: 700;">
               ALL-IN-ONE 🔥
             </div>
             
-            <div style="font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.5));">📦</div>
-            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Mega LUTs Bundle</h3>
-            <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; min-height: 80px;">
+            <div class="card-emoji" style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 0 10px rgba(255,153,0,0.5));">📦</div>
+            <h3 class="card-title" style="color: #fff; font-size: 1.5rem; margin-bottom: 12px; font-weight: 700;">Mega LUTs Bundle</h3>
+            <p class="card-description" style="color: #aaa; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; min-height: 70px;">
               Complete collection! All 8 categories in one download. Save time & storage!
             </p>
             
-            <div style="margin-bottom: 25px;">
-              <span style="color: #00ff00; font-size: 1.8rem; font-weight: 800;">100% FREE</span>
-              <span style="display: block; color: #888; font-size: 0.85rem; margin-top: 5px;">Everything Included</span>
+            <div style="margin-bottom: 20px;">
+              <span class="price-text" style="color: #00ff00; font-size: 1.6rem; font-weight: 800;">100% FREE</span>
+              <span style="display: block; color: #888; font-size: 0.8rem; margin-top: 5px;">Everything Included</span>
             </div>
             
-            <a href="https://drive.google.com/file/d/1PDqa28KXpa8FZUXULq8sxPgsNIwJBftJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 15px; background: linear-gradient(135deg, #ff9900, #ff6600); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center;">
+            <a href="https://drive.google.com/file/d/1PDqa28KXpa8FZUXULq8sxPgsNIwJBftJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lut-download" style="display: block; width: 100%; padding: 14px; background: linear-gradient(135deg, #ff9900, #ff6600); color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none; text-align: center;">
               Download All 🚀
             </a>
           </div>
@@ -556,12 +743,12 @@
         </div>
 
         <!-- Download Info -->
-        <div style="text-align: center; background: linear-gradient(135deg, rgba(255,153,0,0.08), rgba(255,153,0,0.02)); border: 2px solid rgba(255,153,0,0.2); border-radius: 18px; padding: 35px; max-width: 800px; margin: 0 auto;">
-          <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 20px; font-weight: 700;">📥 How to Download</h3>
-          <p style="color: #aaa; font-size: 1rem; line-height: 1.7; margin-bottom: 15px;">
+        <div style="text-align: center; background: linear-gradient(135deg, rgba(255,153,0,0.08), rgba(255,153,0,0.02)); border: 2px solid rgba(255,153,0,0.2); border-radius: 16px; padding: 28px 20px; max-width: 700px; margin: 0 auto;">
+          <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 15px; font-weight: 700;">📥 How to Download</h3>
+          <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
             Click any "Download Free" button above to open the Google Drive link. Click the download icon to save the ZIP file to your computer.
           </p>
-          <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">
+          <p style="color: #888; font-size: 0.85rem; line-height: 1.5;">
             ✅ No signup required • ✅ Instant access • ✅ Direct download from Google Drive
           </p>
         </div>
@@ -569,162 +756,135 @@
       </div>
     </section>
 
-<!-- ============================================ -->
-<!-- COMING SOON SECTION -->
-<!-- ============================================ -->
-<section id="coming-soon" style="background: linear-gradient(180deg, #0a0a0a 0%, #0e0e0e 100%); padding: 80px 20px; position: relative; overflow: hidden;">
-  
-  <!-- Animated Background -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 50%, rgba(138, 43, 226, 0.08), transparent 60%); pointer-events: none;"></div>
-  
-  <div style="max-width: 1400px; margin: 0 auto; position: relative; z-index: 1;">
-    
-    <!-- Section Header -->
-    <div style="text-align: center; margin-bottom: 60px;">
-      <span style="display: inline-block; padding: 6px 18px; background: rgba(138, 43, 226, 0.1); border: 1px solid rgba(138, 43, 226, 0.3); border-radius: 50px; color: #8a2be2; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; animation: pulse 2s infinite;">
-        🚀 COMING SOON
-      </span>
-      <h2 style="font-size: 3rem; margin-bottom: 15px; background: linear-gradient(135deg, #fff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;">
-        More Resources On The Way
-      </h2>
-      <p style="color: #aaa; font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
-        Exciting new presets, plugins, and transitions are in development. Stay tuned!
-      </p>
-    </div>
-
-    <!-- Coming Soon Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-
-      <!-- Card 1: Text Presets -->
-      <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 18px; padding: 40px; text-align: center; position: relative; overflow: hidden; transition: all 0.3s ease;">
+    <!-- ============================================ -->
+    <!-- COMING SOON SECTION -->
+    <!-- ============================================ -->
+    <section id="coming-soon" class="section-padding" style="background: linear-gradient(180deg, #0a0a0a 0%, #0e0e0e 100%); padding: 60px 20px; position: relative; overflow: hidden;">
+      
+      <!-- Animated Background -->
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 50%, rgba(138, 43, 226, 0.08), transparent 60%); pointer-events: none;"></div>
+      
+      <div class="section-container" style="position: relative; z-index: 1;">
         
-        <!-- Shimmer Effect -->
-        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite;"></div>
-        
-        <div style="position: relative; z-index: 1;">
-          <div style="font-size: 4rem; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">✨</div>
-          <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">Text Presets</h3>
-          <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
-            Animated text presets for Premiere Pro & After Effects. Professional titles made easy.
+        <!-- Section Header -->
+        <div style="text-align: center; margin-bottom: 40px;">
+          <span style="display: inline-block; padding: 6px 18px; background: rgba(138, 43, 226, 0.1); border: 1px solid rgba(138, 43, 226, 0.3); border-radius: 50px; color: #8a2be2; font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; animation: pulse 2s infinite;">
+            🚀 COMING SOON
+          </span>
+          <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 15px; background: linear-gradient(135deg, #fff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800;">
+            More Resources On The Way
+          </h2>
+          <p class="section-subtitle" style="color: #aaa; font-size: 1rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+            Exciting new presets, plugins, and transitions are in development. Stay tuned!
           </p>
-          <div style="display: inline-block; padding: 10px 25px; background: rgba(138, 43, 226, 0.2); border-radius: 25px; color: #8a2be2; font-weight: 600; font-size: 0.9rem;">
-            🔜 In Development
+        </div>
+
+        <!-- Coming Soon Grid -->
+        <div class="coming-soon-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px;">
+
+          <!-- Card 1: Text Presets -->
+          <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 16px; padding: 32px 22px; text-align: center; position: relative; overflow: hidden;">
+            
+            <!-- Shimmer Effect -->
+            <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite;"></div>
+            
+            <div style="position: relative; z-index: 1;">
+              <div style="font-size: 3.5rem; margin-bottom: 18px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">✨</div>
+              <h3 style="color: #fff; font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Text Presets</h3>
+              <p style="color: #aaa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">
+                Animated text presets for Premiere Pro & After Effects. Professional titles made easy.
+              </p>
+              <div style="display: inline-block; padding: 8px 20px; background: rgba(138, 43, 226, 0.2); border-radius: 22px; color: #8a2be2; font-weight: 600; font-size: 0.85rem;">
+                🔜 In Development
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Caption Presets -->
+          <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 16px; padding: 32px 22px; text-align: center; position: relative; overflow: hidden;">
+            
+            <!-- Shimmer Effect -->
+            <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite 0.5s;"></div>
+            
+            <div style="position: relative; z-index: 1;">
+              <div style="font-size: 3.5rem; margin-bottom: 18px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">💬</div>
+              <h3 style="color: #fff; font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Caption Text Presets</h3>
+              <p style="color: #aaa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">
+                Trending caption styles for Reels & YouTube Shorts. Auto-animated & customizable.
+              </p>
+              <div style="display: inline-block; padding: 8px 20px; background: rgba(138, 43, 226, 0.2); border-radius: 22px; color: #8a2be2; font-weight: 600; font-size: 0.85rem;">
+                🔜 In Development
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Transitions -->
+          <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 16px; padding: 32px 22px; text-align: center; position: relative; overflow: hidden;">
+            
+            <!-- Shimmer Effect -->
+            <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite 1s;"></div>
+            
+            <div style="position: relative; z-index: 1;">
+              <div style="font-size: 3.5rem; margin-bottom: 18px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">🎞️</div>
+              <h3 style="color: #fff; font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Transitions Pack</h3>
+              <p style="color: #aaa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">
+                Smooth, cinematic transitions for seamless editing. Compatible with all major editors.
+              </p>
+              <div style="display: inline-block; padding: 8px 20px; background: rgba(138, 43, 226, 0.2); border-radius: 22px; color: #8a2be2; font-weight: 600; font-size: 0.85rem;">
+                🔜 In Development
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Plugins -->
+          <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 16px; padding: 32px 22px; text-align: center; position: relative; overflow: hidden;">
+            
+            <!-- Shimmer Effect -->
+            <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite 1.5s;"></div>
+            
+            <div style="position: relative; z-index: 1;">
+              <div style="font-size: 3.5rem; margin-bottom: 18px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">🔌</div>
+              <h3 style="color: #fff; font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Editing Plugins</h3>
+              <p style="color: #aaa; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">
+                Powerful plugins to speed up your workflow. Effects, tools, and automation scripts.
+              </p>
+              <div style="display: inline-block; padding: 8px 20px; background: rgba(138, 43, 226, 0.2); border-radius: 22px; color: #8a2be2; font-weight: 600; font-size: 0.85rem;">
+                🔜 In Development
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Notify CTA -->
+        <div style="text-align: center; background: linear-gradient(135deg, rgba(138, 43, 226, 0.08), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.2); border-radius: 16px; padding: 32px 20px; max-width: 650px; margin: 0 auto;">
+          <h3 style="color: #fff; font-size: 1.4rem; margin-bottom: 12px; font-weight: 700;">Want to Get Notified?</h3>
+          <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 22px;">
+            Be the first to know when these resources launch. Follow me on Instagram or join my Telegram channel!
+          </p>
+          <div class="social-buttons" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://www.instagram.com/PIXELTRAIVO" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; background: linear-gradient(135deg, #E1306C, #C13584); color: #fff; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.3s ease; box-shadow: 0 4px 18px rgba(225, 48, 108, 0.3);">
+              <span>📸</span>
+              <span>Instagram</span>
+            </a>
+            <a href="https://t.me/pixeltraivo" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; background: linear-gradient(135deg, #0088cc, #006699); color: #fff; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.3s ease; box-shadow: 0 4px 18px rgba(0, 136, 204, 0.3);">
+              <span>✈️</span>
+              <span>Telegram</span>
+            </a>
           </div>
         </div>
+
       </div>
-
-      <!-- Card 2: Caption Presets -->
-      <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 18px; padding: 40px; text-align: center; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        
-        <!-- Shimmer Effect -->
-        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite 0.5s;"></div>
-        
-        <div style="position: relative; z-index: 1;">
-          <div style="font-size: 4rem; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">💬</div>
-          <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">Caption Text Presets</h3>
-          <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
-            Trending caption styles for Reels & YouTube Shorts. Auto-animated & customizable.
-          </p>
-          <div style="display: inline-block; padding: 10px 25px; background: rgba(138, 43, 226, 0.2); border-radius: 25px; color: #8a2be2; font-weight: 600; font-size: 0.9rem;">
-            🔜 In Development
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3: Transitions -->
-      <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 18px; padding: 40px; text-align: center; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        
-        <!-- Shimmer Effect -->
-        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite 1s;"></div>
-        
-        <div style="position: relative; z-index: 1;">
-          <div style="font-size: 4rem; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">🎞️</div>
-          <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">Transitions Pack</h3>
-          <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
-            Smooth, cinematic transitions for seamless editing. Compatible with all major editors.
-          </p>
-          <div style="display: inline-block; padding: 10px 25px; background: rgba(138, 43, 226, 0.2); border-radius: 25px; color: #8a2be2; font-weight: 600; font-size: 0.9rem;">
-            🔜 In Development
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4: Plugins -->
-      <div class="coming-soon-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.3); border-radius: 18px; padding: 40px; text-align: center; position: relative; overflow: hidden; transition: all 0.3s ease;">
-        
-        <!-- Shimmer Effect -->
-        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent); animation: shimmer 3s infinite 1.5s;"></div>
-        
-        <div style="position: relative; z-index: 1;">
-          <div style="font-size: 4rem; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));">🔌</div>
-          <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;">Editing Plugins</h3>
-          <p style="color: #aaa; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
-            Powerful plugins to speed up your workflow. Effects, tools, and automation scripts.
-          </p>
-          <div style="display: inline-block; padding: 10px 25px; background: rgba(138, 43, 226, 0.2); border-radius: 25px; color: #8a2be2; font-weight: 600; font-size: 0.9rem;">
-            🔜 In Development
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Notify CTA -->
-    <div style="text-align: center; margin-top: 60px; background: linear-gradient(135deg, rgba(138, 43, 226, 0.08), rgba(138, 43, 226, 0.02)); border: 2px solid rgba(138, 43, 226, 0.2); border-radius: 18px; padding: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
-      <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 15px; font-weight: 700;">Want to Get Notified?</h3>
-      <p style="color: #aaa; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">
-        Be the first to know when these resources launch. Follow me on Instagram or join my Telegram channel!
-      </p>
-      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-        <a href="https://www.instagram.com/PIXELTRAIVO" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: linear-gradient(135deg, #E1306C, #C13584); color: #fff; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 18px rgba(225, 48, 108, 0.3);">
-          <span>📸</span>
-          <span>Follow on Instagram</span>
-        </a>
-        <a href="https://t.me/pixeltraivo" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: linear-gradient(135deg, #0088cc, #006699); color: #fff; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 18px rgba(0, 136, 204, 0.3);">
-          <span>✈️</span>
-          <span>Join Telegram</span>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Animations -->
-<style>
-  @keyframes shimmer {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.05); }
-  }
-
-  .coming-soon-card:hover {
-    transform: translateY(-5px);
-    border-color: #8a2be2;
-    box-shadow: 0 15px 40px rgba(138, 43, 226, 0.3);
-  }
-
-  /* Responsive */
-  @media (max-width: 640px) {
-    .coming-soon-card {
-      padding: 30px !important;
-    }
-  }
-</style>
-
+    </section>
 
   </div>
 
   <!-- Simple Footer -->
-  <footer style="background: #0a0a0a; padding: 30px 20px; text-align: center; border-top: 1px solid #333;">
-    <p style="color: #888; font-size: 0.9rem; margin-bottom: 10px;">
+  <footer style="background: #0a0a0a; padding: 25px 20px; text-align: center; border-top: 1px solid #333;">
+    <p style="color: #888; font-size: 0.9rem; margin-bottom: 8px;">
       © 2025 <strong style="color: #ff9900;">PixelTraivo</strong>. All Rights Reserved.
     </p>
-    <p style="color: #777; font-size: 0.85rem;">
+    <p style="color: #777; font-size: 0.8rem;">
       🔒 Unauthorized use prohibited • <a href="index.html" style="color: #ff9900; text-decoration: none;">Back to Portfolio</a>
     </p>
   </footer>
