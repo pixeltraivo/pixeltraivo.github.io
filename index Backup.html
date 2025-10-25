@@ -956,25 +956,20 @@
           
         </div>
 
-
-        <!-- Trust Indicators / Stats - MOBILE OPTIMIZED -->
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 40px; padding-top: 30px; border-top: 1px solid #333; gap: 15px;">
-          
-          <div style="text-align: center; flex: 1 1 100%; max-width: 150px; padding: 15px 10px;">
-            <h3 style="font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; color: #ff9900; margin: 0 0 8px 0; line-height: 1;">100+</h3>
-            <p style="color: #aaa; font-size: clamp(0.85rem, 2.5vw, 0.95rem); margin: 0; line-height: 1.4;">Projects Completed</p>
+        <!-- Trust Indicators / Stats -->
+        <div class="trust-stats" style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 50px; padding-top: 40px; border-top: 1px solid #333;">
+          <div>
+            <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">100+</h3>
+            <p style="color: #aaa; font-size: 0.95rem;">Projects Completed</p>
           </div>
-          
-          <div style="text-align: center; flex: 1 1 100%; max-width: 150px; padding: 15px 10px;">
-            <h3 style="font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; color: #ff9900; margin: 0 0 8px 0; line-height: 1;">20+</h3>
-            <p style="color: #aaa; font-size: clamp(0.85rem, 2.5vw, 0.95rem); margin: 0; line-height: 1.4;">Happy Clients</p>
+          <div>
+            <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">20+</h3>
+            <p style="color: #aaa; font-size: 0.95rem;">Happy Clients</p>
           </div>
-          
-          <div style="text-align: center; flex: 1 1 100%; max-width: 150px; padding: 15px 10px;">
-            <h3 style="font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 800; color: #ff9900; margin: 0 0 8px 0; line-height: 1;">3+ Years</h3>
-            <p style="color: #aaa; font-size: clamp(0.85rem, 2.5vw, 0.95rem); margin: 0; line-height: 1.4;">Experience</p>
+          <div>
+            <h3 style="font-size: 2.5rem; font-weight: 800; color: #ff9900; margin-bottom: 5px;">3+ Years</h3>
+            <p style="color: #aaa; font-size: 0.95rem;">Experience</p>
           </div>
-          
         </div>
 
       </div>
@@ -983,184 +978,171 @@
   </div>
 </section>
 
-<!-- Add this CSS in your <style> tag for better responsiveness -->
-<style>
-  /* Trust Stats Mobile Optimization */
-  @media (max-width: 640px) {
-    .trust-stats {
-      flex-direction: column !important;
-      gap: 25px !important;
-      margin-top: 35px !important;
-      padding-top: 25px !important;
-    }
-    
-    .trust-stats h3 {
-      font-size: 2.2rem !important;
-    }
-    
-    .trust-stats p {
-      font-size: 0.9rem !important;
-    }
-  }
 
-  @media (min-width: 641px) and (max-width: 1024px) {
-    .trust-stats {
-      gap: 30px !important;
-    }
-    
-    .trust-stats h3 {
-      font-size: 2.3rem !important;
-    }
-  }
+      <!-- ============================================ -->
+      <!-- SHOWREEL SECTION (HOVER TO PLAY) -->
+      <!-- ============================================ -->
+      <section class="section_home-showreel padding-section-medium" id="showreel"
+        style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background-color: #0e0e0e; color: white; padding: 80px 20px;">
+        
+        <!-- Heading -->
+        <div class="showreel-title" style="margin-bottom: 50px;">
+          <h2 style="font-size: 52px; font-weight: 700; margin: 0;">
+            <span style="color: #ccc;">Watch</span>
+            <span style="color: #ff9900;"> My </span>
+          </h2>
+          <h1 style="font-size: 70px; font-weight: 900; margin: 0;">
+            <span style="border-bottom: 5px solid orange;">Showreel</span>
+          </h1>
+        </div>
 
-  @media (min-width: 1025px) {
-    .trust-stats {
-      gap: 50px !important;
-    }
-    
-    .trust-stats h3 {
-      font-size: 2.5rem !important;
-    }
-    
-    .trust-stats p {
-      font-size: 0.95rem !important;
-    }
-  }
-</style>
+        <!-- Showreel Video (Hover to Play) -->
+        <div class="video-wrapper fade-in-up" id="showreel-wrapper">
+          <div class="iframe-container">
+            <iframe 
+              id="showreel-video"
+              src="https://player.vimeo.com/video/1130436467?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+              frameborder="0" 
+              allow="autoplay; fullscreen; picture-in-picture" 
+              allowfullscreen
+              loading="lazy"
+              title="PixelTraivo Showreel">
+            </iframe>
+          </div>
+        </div>
+      </section>
 
-</section>
+      <!-- ============================================ -->
+      <!-- PORTFOLIO SECTION -->
+      <!-- ============================================ -->
+      <section id="portfolio" class="section_home-portfolio padding-section-medium">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="w-layout-grid portfolio_wrapper">
+
+              <!-- Top Left (Vertical Video) -->
+              <div id="w-node-_9e1bef26-03ac-44c0-3697-3f715c080fb5-c5a160e1" class="fade-in-left">
+                <div class="moble-design top-left portfolio-video-card">
+                  <div class="div-block">
+                    <div style="padding-top:177.78%" class="w-video w-embed">
+                      <iframe src="https://player.vimeo.com/video/1119758094?badge=0&autopause=0&player_id=0&app_id=58479" 
+                              width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 1"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section Header -->
+              <div id="w-node-_866d0130-6b4e-4c69-d58a-f00f27eaed16-c5a160e1" class="portfolio-header scale-in">
+                <div class="h2-wrapper on_portfolio">
+                  <h2 class="h2-line-one">Videos</h2>
+                  <h2 class="h2-line-two">That Grab</h2>
+                  <div class="h2-underline-wrapper">
+                    <h2 class="h2-line-three">Attention</h2>
+                    <img src="https://cdn.prod.website-files.com/652427491a917cefc5a160de/65910fc0945adeb6ffc62b37_Frame-1.svg" 
+                         loading="lazy" width="239" alt="Underline decoration" class="element_underline" />
+                  </div>
+                  <img src="https://cdn.prod.website-files.com/652427491a917cefc5a160de/65910fc3015470c88712ba8f_Heart.svg" 
+                       loading="lazy" width="33" alt="Heart decoration" class="element_hearts" />
+                  <img src="https://cdn.prod.website-files.com/652427491a917cefc5a160de/65910fc2656dfadeef9e00b7_Sketch-annotation-element-brush-pen-icon-crown.svg" 
+                       loading="lazy" width="74" alt="Crown decoration" class="element-crown" />
+                </div>
+              </div>
+
+              <!-- Top Right (Vertical Video) -->
+              <div id="w-node-_6758ed85-23fd-38b6-785b-434532441e17-c5a160e1" class="fade-in-right">
+                <div class="moble-design top-right portfolio-video-card">
+                  <div class="div-block">
+                    <div style="padding-top:177.78%" class="w-video w-embed">
+                      <iframe src="https://player.vimeo.com/video/1119802002?badge=0&autopause=0&player_id=0&app_id=58479" 
+                              width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 2"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Left (Vertical Video) -->
+              <div id="w-node-b781291c-51c4-d8e5-47c6-c6477913bdc5-c5a160e1" class="fade-in-left">
+                <div class="moble-design bottom-left portfolio-video-card">
+                  <div class="div-block">
+                    <div style="padding-top:177.78%" class="w-video w-embed">
+                      <iframe src="https://player.vimeo.com/video/1119801356?badge=0&autopause=0&player_id=0&app_id=58479" 
+                              width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 3"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom (Horizontal Video) -->
+              <div id="w-node-_61560c02-32cd-6e68-2eb0-f9256d900ad1-c5a160e1" class="div-block-7 fade-in-up">
+                <div class="moble-design bottom portfolio-video-card">
+                  <div class="div-block">
+                    <div style="padding-top:56.25%" class="w-video w-embed">
+                      <iframe src="https://player.vimeo.com/video/1119702101?badge=0&autopause=0&player_id=0&app_id=58479" 
+                              width="940" height="529" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 4"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Right (Vertical Video) -->
+              <div id="w-node-df24fde1-c6c9-a74a-51c0-e36f83a26c13-c5a160e1" class="fade-in-right">
+                <div class="moble-design bottom-right portfolio-video-card">
+                  <div class="div-block">
+                    <div style="padding-top:177.78%" class="w-video w-embed">
+                      <iframe src="https://player.vimeo.com/video/1119801313?badge=0&autopause=0&player_id=0&app_id=58479" 
+                              width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 5"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
 
 <!-- ============================================ -->
-<!-- PORTFOLIO SECTION - HOVER TO PLAY -->
-<!-- ============================================ -->
-<section id="portfolio" class="section_home-portfolio padding-section-medium">
-  <div class="padding-global">
-    <div class="container-large">
-      <div class="w-layout-grid portfolio_wrapper">
-
-        <!-- Top Left (Vertical Video) -->
-        <div id="w-node-_9e1bef26-03ac-44c0-3697-3f715c080fb5-c5a160e1" class="fade-in-left">
-          <div class="moble-design top-left portfolio-video-card">
-            <div class="div-block">
-              <div style="padding-top:177.78%" class="w-video w-embed">
-                <iframe src="https://player.vimeo.com/video/1119758094?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&background=0" 
-                        width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 1"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section Header -->
-        <div id="w-node-_866d0130-6b4e-4c69-d58a-f00f27eaed16-c5a160e1" class="portfolio-header scale-in">
-          <div class="h2-wrapper on_portfolio">
-            <h2 class="h2-line-one">Videos</h2>
-            <h2 class="h2-line-two">That Grab</h2>
-            <div class="h2-underline-wrapper">
-              <h2 class="h2-line-three">Attention</h2>
-              <img src="https://cdn.prod.website-files.com/652427491a917cefc5a160de/65910fc0945adeb6ffc62b37_Frame-1.svg" 
-                   loading="lazy" width="239" alt="Underline decoration" class="element_underline" />
-            </div>
-            <img src="https://cdn.prod.website-files.com/652427491a917cefc5a160de/65910fc3015470c88712ba8f_Heart.svg" 
-                 loading="lazy" width="33" alt="Heart decoration" class="element_hearts" />
-            <img src="https://cdn.prod.website-files.com/652427491a917cefc5a160de/65910fc2656dfadeef9e00b7_Sketch-annotation-element-brush-pen-icon-crown.svg" 
-                 loading="lazy" width="74" alt="Crown decoration" class="element-crown" />
-          </div>
-        </div>
-
-        <!-- Top Right (Vertical Video) -->
-        <div id="w-node-_6758ed85-23fd-38b6-785b-434532441e17-c5a160e1" class="fade-in-right">
-          <div class="moble-design top-right portfolio-video-card">
-            <div class="div-block">
-              <div style="padding-top:177.78%" class="w-video w-embed">
-                <iframe src="https://player.vimeo.com/video/1119802002?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&background=0" 
-                        width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 2"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom Left (Vertical Video) -->
-        <div id="w-node-b781291c-51c4-d8e5-47c6-c6477913bdc5-c5a160e1" class="fade-in-left">
-          <div class="moble-design bottom-left portfolio-video-card">
-            <div class="div-block">
-              <div style="padding-top:177.78%" class="w-video w-embed">
-                <iframe src="https://player.vimeo.com/video/1119801356?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&background=0" 
-                        width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 3"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom (Horizontal Video) -->
-        <div id="w-node-_61560c02-32cd-6e68-2eb0-f9256d900ad1-c5a160e1" class="div-block-7 fade-in-up">
-          <div class="moble-design bottom portfolio-video-card">
-            <div class="div-block">
-              <div style="padding-top:56.25%" class="w-video w-embed">
-                <iframe src="https://player.vimeo.com/video/1119702101?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&background=0" 
-                        width="940" height="529" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 4"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom Right (Vertical Video) -->
-        <div id="w-node-df24fde1-c6c9-a74a-51c0-e36f83a26c13-c5a160e1" class="fade-in-right">
-          <div class="moble-design bottom-right portfolio-video-card">
-            <div class="div-block">
-              <div style="padding-top:177.78%" class="w-video w-embed">
-                <iframe src="https://player.vimeo.com/video/1119801313?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&background=0" 
-                        width="940" height="1671" scrolling="no" allowfullscreen loading="lazy" title="Portfolio Video 5"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================ -->
-<!-- TESTIMONIALS SECTION - MOBILE OPTIMIZED -->
+<!-- TESTIMONIALS SECTION -->
 <!-- ============================================ -->
 
-<section id="testimonials" style="background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); padding: 50px 15px; color: #fff; position: relative; overflow: hidden;">
+<section id="testimonials" style="background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); padding: 80px 20px; color: #fff; position: relative; overflow: hidden;">
   
   <div style="max-width: 1400px; margin: 0 auto; text-align: center;">
     
-    <!-- Heading -->
-    <h2 style="font-size: 2rem; margin-bottom: 15px; color: #fff; line-height: 1.2;">
+    <h2 style="font-size: 3rem; margin-bottom: 20px; color: #fff;">
       What <span style="color: #ff9900;">Clients Say</span>
     </h2>
     
-    <p style="color: #aaa; font-size: 1rem; margin-bottom: 40px; max-width: 90%; margin-left: auto; margin-right: auto; padding: 0 10px;">
+    <p style="color: #aaa; font-size: 1.1rem; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto;">
       Don't just take my word for it - hear from satisfied clients
     </p>
     
     <!-- Horizontal Scroll Container -->
-    <div style="overflow: hidden; position: relative; margin: 0;">
+    <div style="overflow: hidden; position: relative; margin: 0 -20px;">
       
-      <div class="testimonials-track" style="display: flex; gap: 15px; animation: scroll-testimonials 50s linear infinite; padding: 10px 0;">
+      <div class="testimonials-track" style="display: flex; gap: 25px; animation: scroll-testimonials 35s linear infinite;">
       
         <!-- Testimonial 1 - Naman Upadhyay -->
-        <div style="background: #1a1a1a; padding: 25px 20px; border-radius: 12px; border-left: 4px solid #ff9900; text-align: left; min-width: 280px; max-width: 280px; flex-shrink: 0; box-sizing: border-box;">
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
           
-          <div style="font-size: 1.3rem; color: #ff9900; margin-bottom: 12px;">⭐⭐⭐⭐⭐</div>
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
           
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc; margin-bottom: 20px; min-height: 80px;">
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
             "Praveen's editing skills transformed our brand videos. The attention to detail and creativity is outstanding!"
           </p>
           
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="min-width: 45px; width: 45px; height: 45px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; color: #fff; flex-shrink: 0;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Avatar -->
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">
               N
             </div>
+            <!-- Name & Role -->
             <div style="flex: 1; min-width: 0;">
-              <div style="font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
                 Naman Upadhyay
               </div>
-              <div style="font-size: 0.88rem; color: #aaa; margin-top: 3px; padding: 0;">
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">
                 Content Creator
               </div>
             </div>
@@ -1168,23 +1150,25 @@
         </div>
         
         <!-- Testimonial 2 - Crypter -->
-        <div style="background: #1a1a1a; padding: 25px 20px; border-radius: 12px; border-left: 4px solid #ff9900; text-align: left; min-width: 280px; max-width: 280px; flex-shrink: 0; box-sizing: border-box;">
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
           
-          <div style="font-size: 1.3rem; color: #ff9900; margin-bottom: 12px;">⭐⭐⭐⭐⭐</div>
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
           
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc; margin-bottom: 20px; min-height: 80px;">
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
             "Professional, creative, and always delivers on time. Highly recommend for any video project!"
           </p>
           
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="min-width: 45px; width: 45px; height: 45px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; color: #fff; flex-shrink: 0;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Avatar -->
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">
               C
             </div>
+            <!-- Name & Role -->
             <div style="flex: 1; min-width: 0;">
-              <div style="font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
                 Crypter
               </div>
-              <div style="font-size: 0.88rem; color: #aaa; margin-top: 3px; padding: 0;">
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">
                 YouTuber
               </div>
             </div>
@@ -1192,23 +1176,25 @@
         </div>
         
         <!-- Testimonial 3 - Shivam -->
-        <div style="background: #1a1a1a; padding: 25px 20px; border-radius: 12px; border-left: 4px solid #ff9900; text-align: left; min-width: 280px; max-width: 280px; flex-shrink: 0; box-sizing: border-box;">
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
           
-          <div style="font-size: 1.3rem; color: #ff9900; margin-bottom: 12px;">⭐⭐⭐⭐⭐</div>
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
           
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc; margin-bottom: 20px; min-height: 80px;">
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
             "Exceptional motion graphics work! Praveen understood our vision perfectly and exceeded expectations."
           </p>
           
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="min-width: 45px; width: 45px; height: 45px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; color: #fff; flex-shrink: 0;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Avatar -->
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">
               S
             </div>
+            <!-- Name & Role -->
             <div style="flex: 1; min-width: 0;">
-              <div style="font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
                 Shivam
               </div>
-              <div style="font-size: 0.88rem; color: #aaa; margin-top: 3px; padding: 0;">
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">
                 Filmmaker
               </div>
             </div>
@@ -1216,23 +1202,25 @@
         </div>
 
         <!-- Testimonial 4 - Umar -->
-        <div style="background: #1a1a1a; padding: 25px 20px; border-radius: 12px; border-left: 4px solid #ff9900; text-align: left; min-width: 280px; max-width: 280px; flex-shrink: 0; box-sizing: border-box;">
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
           
-          <div style="font-size: 1.3rem; color: #ff9900; margin-bottom: 12px;">⭐⭐⭐⭐⭐</div>
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
           
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc; margin-bottom: 20px; min-height: 80px;">
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
             "Outstanding video editing and color grading! Praveen's work elevated our content to a whole new level."
           </p>
           
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="min-width: 45px; width: 45px; height: 45px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; color: #fff; flex-shrink: 0;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Avatar -->
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">
               U
             </div>
+            <!-- Name & Role -->
             <div style="flex: 1; min-width: 0;">
-              <div style="font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
                 Umar
               </div>
-              <div style="font-size: 0.88rem; color: #aaa; margin-top: 3px; padding: 0;">
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">
                 Digital Marketer
               </div>
             </div>
@@ -1240,23 +1228,25 @@
         </div>
 
         <!-- Testimonial 5 - Abdullah -->
-        <div style="background: #1a1a1a; padding: 25px 20px; border-radius: 12px; border-left: 4px solid #ff9900; text-align: left; min-width: 280px; max-width: 280px; flex-shrink: 0; box-sizing: border-box;">
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
           
-          <div style="font-size: 1.3rem; color: #ff9900; margin-bottom: 12px;">⭐⭐⭐⭐⭐</div>
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
           
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc; margin-bottom: 20px; min-height: 80px;">
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
             "Amazing experience working with Praveen! Fast turnaround, creative ideas, and top-notch quality every time."
           </p>
           
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="min-width: 45px; width: 45px; height: 45px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; color: #fff; flex-shrink: 0;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Avatar -->
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">
               A
             </div>
+            <!-- Name & Role -->
             <div style="flex: 1; min-width: 0;">
-              <div style="font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">
                 Abdullah
               </div>
-              <div style="font-size: 0.88rem; color: #aaa; margin-top: 3px; padding: 0;">
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">
                 Business Owner
               </div>
             </div>
@@ -1265,48 +1255,78 @@
 
         <!-- DUPLICATE FOR SEAMLESS SCROLL -->
 
-        <div style="background: #1a1a1a; padding: 25px 20px; border-radius: 12px; border-left: 4px solid #ff9900; text-align: left; min-width: 280px; max-width: 280px; flex-shrink: 0; box-sizing: border-box;">
-          <div style="font-size: 1.3rem; color: #ff9900; margin-bottom: 12px;">⭐⭐⭐⭐⭐</div>
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc; margin-bottom: 20px; min-height: 80px;">"Praveen's editing skills transformed our brand videos. The attention to detail and creativity is outstanding!"</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="min-width: 45px; width: 45px; height: 45px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; color: #fff; flex-shrink: 0;">N</div>
-            <div style="flex: 1; min-width: 0;"><div style="font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Naman Upadhyay</div><div style="font-size: 0.88rem; color: #aaa; margin-top: 3px; padding: 0;">Content Creator</div></div>
+        <!-- Testimonial 1 - Naman Upadhyay -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Praveen's editing skills transformed our brand videos. The attention to detail and creativity is outstanding!"
+          </p>
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">N</div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Naman Upadhyay</div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">Content Creator</div>
+            </div>
           </div>
         </div>
         
-        <div style="background: #1a1a1a; padding: 25px 20px; border-radius: 12px; border-left: 4px solid #ff9900; text-align: left; min-width: 280px; max-width: 280px; flex-shrink: 0; box-sizing: border-box;">
-          <div style="font-size: 1.3rem; color: #ff9900; margin-bottom: 12px;">⭐⭐⭐⭐⭐</div>
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc; margin-bottom: 20px; min-height: 80px;">"Professional, creative, and always delivers on time. Highly recommend for any video project!"</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="min-width: 45px; width: 45px; height: 45px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; color: #fff; flex-shrink: 0;">C</div>
-            <div style="flex: 1; min-width: 0;"><div style="font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Crypter</div><div style="font-size: 0.88rem; color: #aaa; margin-top: 3px; padding: 0;">YouTuber</div></div>
+        <!-- Testimonial 2 - Crypter -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Professional, creative, and always delivers on time. Highly recommend for any video project!"
+          </p>
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">C</div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Crypter</div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">YouTuber</div>
+            </div>
           </div>
         </div>
         
-        <div style="background: #1a1a1a; padding: 25px 20px; border-radius: 12px; border-left: 4px solid #ff9900; text-align: left; min-width: 280px; max-width: 280px; flex-shrink: 0; box-sizing: border-box;">
-          <div style="font-size: 1.3rem; color: #ff9900; margin-bottom: 12px;">⭐⭐⭐⭐⭐</div>
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc; margin-bottom: 20px; min-height: 80px;">"Exceptional motion graphics work! Praveen understood our vision perfectly and exceeded expectations."</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="min-width: 45px; width: 45px; height: 45px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; color: #fff; flex-shrink: 0;">S</div>
-            <div style="flex: 1; min-width: 0;"><div style="font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Shivam</div><div style="font-size: 0.88rem; color: #aaa; margin-top: 3px; padding: 0;">Filmmaker</div></div>
+        <!-- Testimonial 3 - Shivam -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Exceptional motion graphics work! Praveen understood our vision perfectly and exceeded expectations."
+          </p>
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">S</div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Shivam</div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">Filmmaker</div>
+            </div>
           </div>
         </div>
 
-        <div style="background: #1a1a1a; padding: 25px 20px; border-radius: 12px; border-left: 4px solid #ff9900; text-align: left; min-width: 280px; max-width: 280px; flex-shrink: 0; box-sizing: border-box;">
-          <div style="font-size: 1.3rem; color: #ff9900; margin-bottom: 12px;">⭐⭐⭐⭐⭐</div>
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc; margin-bottom: 20px; min-height: 80px;">"Outstanding video editing and color grading! Praveen's work elevated our content to a whole new level."</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="min-width: 45px; width: 45px; height: 45px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; color: #fff; flex-shrink: 0;">U</div>
-            <div style="flex: 1; min-width: 0;"><div style="font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Umar</div><div style="font-size: 0.88rem; color: #aaa; margin-top: 3px; padding: 0;">Digital Marketer</div></div>
+        <!-- Testimonial 4 - Umar -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Outstanding video editing and color grading! Praveen's work elevated our content to a whole new level."
+          </p>
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">U</div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Umar</div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">Digital Marketer</div>
+            </div>
           </div>
         </div>
 
-        <div style="background: #1a1a1a; padding: 25px 20px; border-radius: 12px; border-left: 4px solid #ff9900; text-align: left; min-width: 280px; max-width: 280px; flex-shrink: 0; box-sizing: border-box;">
-          <div style="font-size: 1.3rem; color: #ff9900; margin-bottom: 12px;">⭐⭐⭐⭐⭐</div>
-          <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc; margin-bottom: 20px; min-height: 80px;">"Amazing experience working with Praveen! Fast turnaround, creative ideas, and top-notch quality every time."</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="min-width: 45px; width: 45px; height: 45px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; color: #fff; flex-shrink: 0;">A</div>
-            <div style="flex: 1; min-width: 0;"><div style="font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Abdullah</div><div style="font-size: 0.88rem; color: #aaa; margin-top: 3px; padding: 0;">Business Owner</div></div>
+        <!-- Testimonial 5 - Abdullah -->
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; border-left: 4px solid #ff9900; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; min-width: 320px; max-width: 320px; flex-shrink: 0;">
+          <div style="font-size: 1.6rem; color: #ff9900; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+          <p style="font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 25px; min-height: 90px;">
+            "Amazing experience working with Praveen! Fast turnaround, creative ideas, and top-notch quality every time."
+          </p>
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="min-width: 50px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ff6600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);">A</div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 0; padding: 0; line-height: 1.3;">Abdullah</div>
+              <div style="font-size: 0.95rem; color: #aaa; margin-top: 4px; padding: 0;">Business Owner</div>
+            </div>
           </div>
         </div>
         
@@ -1316,285 +1336,76 @@
   </div>
 </section>
 
-<!-- Testimonials Animation & Responsive Styles -->
 <style>
-  /* Animation */
   @keyframes scroll-testimonials {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  
-  /* Pause on hover/touch - Desktop only */
-  @media (min-width: 1024px) {
-    .testimonials-track:hover {
-      animation-play-state: paused;
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
     }
   }
   
-  /* Mobile: Pause on touch */
-  @media (max-width: 1023px) {
-    .testimonials-track {
-      animation: scroll-testimonials 60s linear infinite !important;
-    }
-  }
-  
-  /* Tablet & Desktop: Larger cards */
-  @media (min-width: 640px) {
-    #testimonials {
-      padding: 60px 20px !important;
-    }
-    
-    #testimonials h2 {
-      font-size: 2.5rem !important;
-      margin-bottom: 18px !important;
-    }
-    
-    #testimonials > div > p {
-      font-size: 1.05rem !important;
-      margin-bottom: 50px !important;
-    }
-    
-    .testimonials-track {
-      gap: 20px !important;
-      animation: scroll-testimonials 40s linear infinite !important;
-    }
-    
-    .testimonials-track > div {
-      min-width: 320px !important;
-      max-width: 320px !important;
-      padding: 30px !important;
-      border-radius: 15px !important;
-    }
-    
-    .testimonials-track > div > div:first-child {
-      font-size: 1.5rem !important;
-      margin-bottom: 15px !important;
-    }
-    
-    .testimonials-track > div > p {
-      font-size: 1rem !important;
-      margin-bottom: 25px !important;
-      min-height: 90px !important;
-    }
-    
-    .testimonials-track > div > div:last-child > div:first-child {
-      min-width: 50px !important;
-      width: 50px !important;
-      height: 50px !important;
-      font-size: 1.5rem !important;
-    }
-    
-    .testimonials-track > div > div:last-child > div:last-child > div:first-child {
-      font-size: 1.1rem !important;
-    }
-    
-    .testimonials-track > div > div:last-child > div:last-child > div:last-child {
-      font-size: 0.95rem !important;
-    }
-  }
-  
-  /* Large Desktop */
-  @media (min-width: 1024px) {
-    #testimonials {
-      padding: 80px 20px !important;
-    }
-    
-    #testimonials h2 {
-      font-size: 3rem !important;
-      margin-bottom: 20px !important;
-    }
-    
-    #testimonials > div > p {
-      font-size: 1.1rem !important;
-      margin-bottom: 60px !important;
-    }
-    
-    .testimonials-track {
-      gap: 25px !important;
-      animation: scroll-testimonials 35s linear infinite !important;
-    }
+  .testimonials-track:hover {
+    animation-play-state: paused;
   }
 </style>
 
 
-<!-- ============================================ -->
-<!-- CONTACT SECTION - PROPERLY SPACED -->
-<!-- ============================================ -->
-<section id="contact" style="background:#0e0e0e; padding:60px 20px; color:#fff;">
-  <div style="max-width:1000px; margin:0 auto;">
-    
-    <!-- Heading Section -->
-    <div style="text-align:center; margin-bottom:50px;">
-      <h2 style="font-size:2.5rem; font-weight:800; color:#fff; margin:0 0 15px 0; line-height:1.2;">
-        Let's <span style="color:#ff9900;">Connect</span>
-      </h2>
-      <p style="color:#aaa; font-size:1.1rem; margin:0; padding:0 20px; line-height:1.6;">
-        Have a project in mind? Let's discuss how I can help bring your vision to life
-      </p>
-    </div>
-    
-    <!-- Contact Content Container -->
-    <div style="display:block; width:100%;">
-      
-      <!-- Quick Reach Card -->
-      <div style="background:#1a1a1a; padding:35px 30px; border-radius:15px; margin-bottom:30px; width:100%; box-sizing:border-box;">
-        <h3 style="font-size:1.8rem; margin:0 0 30px 0; color:#ff9900; text-align:center;">Quick Reach</h3>
-        
-        <div style="margin-bottom:25px;">
-          <strong style="color:#ff9900; font-size:1rem; display:block; margin-bottom:8px;">📱 WhatsApp:</strong>
-          <a href="https://wa.me/918815720085" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none; font-size:1.1rem; display:block;">+91 88157 20085</a>
-        </div>
-        
-        <div style="margin-bottom:25px;">
-          <strong style="color:#ff9900; font-size:1rem; display:block; margin-bottom:8px;">📧 Email:</strong>
-          <a href="mailto:pixeltraivo@gmail.com" style="color:#fff; text-decoration:none; font-size:1.1rem; word-break:break-word; display:block;">pixeltraivo@gmail.com</a>
-        </div>
-        
-        <div style="margin-bottom:25px;">
-          <strong style="color:#ff9900; font-size:1rem; display:block; margin-bottom:8px;">📱 Telegram:</strong>
-          <a href="https://t.me/pixeltraivo" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none; font-size:1.1rem; display:block;">@pixeltraivo</a>
-        </div>
-        
-        <div style="margin-bottom:0;">
-          <strong style="color:#ff9900; font-size:1rem; display:block; margin-bottom:8px;">📸 Instagram:</strong>
-          <a href="https://www.instagram.com/PIXELTRAIVO" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none; font-size:1.1rem; display:block;">@PIXELTRAIVO</a>
-        </div>
-      </div>
-      
-      <!-- Contact Form Card -->
-      <div style="background:#1a1a1a; padding:35px 30px; border-radius:15px; width:100%; box-sizing:border-box;">
-        <form id="contactForm" action="https://formspree.io/f/xyznrknv" method="POST">
-          
-          <input 
-            type="text" 
-            name="name" 
-            placeholder="Your Name" 
-            required 
-            style="width:100%; padding:15px; margin-bottom:20px; background:#0e0e0e; border:2px solid #333; border-radius:10px; color:#fff; font-size:16px; font-family:inherit; box-sizing:border-box; display:block;" 
-          />
-          
-          <input 
-            type="email" 
-            name="email" 
-            placeholder="Your Email" 
-            required 
-            style="width:100%; padding:15px; margin-bottom:20px; background:#0e0e0e; border:2px solid #333; border-radius:10px; color:#fff; font-size:16px; font-family:inherit; box-sizing:border-box; display:block;" 
-          />
-          
-          <textarea 
-            name="message" 
-            placeholder="Your Message" 
-            rows="5" 
-            required 
-            style="width:100%; padding:15px; margin-bottom:20px; background:#0e0e0e; border:2px solid #333; border-radius:10px; color:#fff; font-size:16px; font-family:inherit; resize:vertical; min-height:120px; box-sizing:border-box; display:block;"
-          ></textarea>
-          
-          <button 
-            type="submit" 
-            style="width:100%; padding:16px; background:linear-gradient(135deg, #ff9900, #ff7700); color:#fff; border:none; border-radius:10px; font-size:1.1rem; font-weight:600; cursor:pointer; box-sizing:border-box; display:block; transition:all 0.3s ease;"
-          >Send Message 📩</button>
-          
-        </form>
-      </div>
-      
-    </div>
-    
-  </div>
-</section>
 
-<!-- Add CSS for Focus States & Desktop Layout -->
-<style>
-  /* Form Input Focus */
-  #contactForm input:focus,
-  #contactForm textarea:focus {
-    outline: none;
-    border-color: #ff9900 !important;
-    background: #1a1a1a !important;
-    box-shadow: 0 0 15px rgba(255, 153, 0, 0.2);
-  }
-  
-  /* Button Hover - Desktop */
-  @media (min-width: 1024px) {
-    #contactForm button:hover {
-      background: linear-gradient(135deg, #ff8800, #ff6600) !important;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4);
-    }
-  }
-  
-  /* Button Active - Mobile */
-  #contactForm button:active {
-    transform: scale(0.98);
-  }
-  
-  /* Contact Links Hover */
-  #contact a:hover {
-    color: #ffaa00 !important;
-    text-decoration: underline;
-  }
-  
-  /* Desktop Grid Layout - 2 Columns */
-  @media (min-width: 768px) {
-    #contact {
-      padding: 80px 20px !important;
-    }
-    
-    #contact h2 {
-      font-size: 3rem !important;
-    }
-    
-    #contact > div > div:nth-child(2) {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      gap: 40px !important;
-    }
-    
-    #contact > div > div:nth-child(2) > div:first-child {
-      margin-bottom: 0 !important;
-    }
-  }
-  
-  /* Mobile Adjustments */
-  @media (max-width: 767px) {
-    #contact {
-      padding: 50px 15px !important;
-    }
-    
-    #contact h2 {
-      font-size: 2rem !important;
-    }
-    
-    #contact > div > div:first-child p {
-      font-size: 1rem !important;
-    }
-    
-    #contact > div > div:nth-child(2) > div {
-      padding: 25px 20px !important;
-    }
-    
-    #contact h3 {
-      font-size: 1.5rem !important;
-    }
-  }
-  
-  /* Extra Small Screens */
-  @media (max-width: 480px) {
-    #contact h2 {
-      font-size: 1.8rem !important;
-    }
-    
-    #contact > div > div:first-child p {
-      font-size: 0.95rem !important;
-      padding: 0 10px !important;
-    }
-    
-    #contact > div > div:nth-child(2) > div {
-      padding: 20px 15px !important;
-    }
-  }
-</style>
+      <!-- ============================================ -->
+      <!-- CONTACT SECTION -->
+      <!-- ============================================ -->
+      <section id="contact" style="background:#0e0e0e; padding:80px 20px; color:#fff;">
+        <div class="container-medium" style="max-width:1000px; margin:0 auto;">
+          <h2 class="section-heading" style="text-align:center; margin-bottom:20px;">
+            Let's <span style="color:#ff9900;">Connect</span>
+          </h2>
+          <p style="color:#aaa; font-size:1.1rem; text-align:center; margin-bottom:50px;" class="fade-in-up">
+            Have a project in mind? Let's discuss how I can help bring your vision to life
+          </p>
+          
+          <div class="contact-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;">
+            
+            <!-- Contact Form -->
+            <form id="contactForm" action="https://formspree.io/f/xyznrknv" method="POST" class="fade-in-left" style="background:#1a1a1a; padding:40px; border-radius:20px;">
+              <input type="text" name="name" placeholder="Your Name" required class="form-input" />
+              <input type="email" name="email" placeholder="Your Email" required class="form-input" />
+              <textarea name="message" placeholder="Your Message" rows="5" required class="form-input"></textarea>
+              <button type="submit" class="btn-submit">Send Message 📩</button>
+            </form>
+            
+            <!-- Quick Reach -->
+            <div class="contact-info-card fade-in-right">
+              <h3 style="font-size:1.8rem; margin-bottom:30px; color:#ff9900;">Quick Reach</h3>
+              
+              <div class="contact-info-item">
+                <strong style="color:#ff9900;">📱 WhatsApp:</strong><br/>
+                <a href="https://wa.me/918815720085" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none; font-size:1.1rem;">+91 88157 20085</a>
+              </div>
+              
+              <div class="contact-info-item">
+                <strong style="color:#ff9900;">📧 Email:</strong><br/>
+                <a href="mailto:pixeltraivo@gmail.com" style="color:#fff; text-decoration:none; font-size:1.1rem;">pixeltraivo@gmail.com</a>
+              </div>
+              
+              <div class="contact-info-item">
+                <strong style="color:#ff9900;">📱 Telegram:</strong><br/>
+                <a href="https://t.me/pixeltraivo" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none; font-size:1.1rem;">@pixeltraivo</a>
+              </div>
+              
+              <div class="contact-info-item">
+                <strong style="color:#ff9900;">📸 Instagram:</strong><br/>
+                <a href="https://www.instagram.com/PIXELTRAIVO" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none; font-size:1.1rem;">@PIXELTRAIVO</a>
+              </div>
+              
+            </div>
 
-</main>
+          </div>
+        </div>
+      </section>
+
+    </main>
 
 <!-- ============================================ -->
 <!-- ENHANCED FOOTER -->
@@ -1994,124 +1805,32 @@
     <!-- Content Protection -->
     <script>
       // Disable right-click
-      // document.addEventListener('contextmenu', function(e) {
-      //   e.preventDefault();
-      //   alert('⚠️ Right-click is disabled on this website!');
-      //   return false;
-      // });
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        alert('⚠️ Right-click is disabled on this website!');
+        return false;
+      });
 
-      // // Disable common keyboard shortcuts
-      // document.addEventListener('keydown', function(e) {
-      //   // F12 or Ctrl+Shift+I or Ctrl+Shift+J or Ctrl+U
-      //   if (e.key === 'F12' || 
-      //       (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
-      //       (e.ctrlKey && e.key === 'u')) {
-      //     e.preventDefault();
-      //     return false;
-      //   }
-      // });
+      // Disable common keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+        // F12 or Ctrl+Shift+I or Ctrl+Shift+J or Ctrl+U
+        if (e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+            (e.ctrlKey && e.key === 'u')) {
+          e.preventDefault();
+          return false;
+        }
+      });
 
-      // // Disable text selection on specific elements (optional)
-      // document.addEventListener('selectstart', function(e) {
-      //   if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
-      //     e.preventDefault();
-      //     return false;
-      //   }
-      // });
+      // Disable text selection on specific elements (optional)
+      document.addEventListener('selectstart', function(e) {
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+          e.preventDefault();
+          return false;
+        }
+      });
     </script>
 
-<!-- Portfolio Videos Hover to Play Script -->
-<script>
-  // Wait for page load
-  window.addEventListener('load', function() {
-    
-    // Check if Vimeo API is available
-    if (typeof Vimeo === 'undefined') {
-      console.log('Vimeo API not loaded');
-      return;
-    }
-
-    // Detect if touch device
-    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-    // All portfolio video iframes
-    const portfolioIframes = document.querySelectorAll('.portfolio-video-card iframe');
-    
-    // Store all players
-    const players = [];
-    let currentlyPlaying = null;
-
-    // Initialize Vimeo players
-    portfolioIframes.forEach(function(iframe, index) {
-      const player = new Vimeo.Player(iframe);
-      players.push(player);
-      
-      const videoWrapper = iframe.closest('.portfolio-video-card');
-      
-      if (!videoWrapper) return;
-
-      // Desktop: Hover to play
-      if (!isTouch) {
-        
-        // Mouse enter - Play
-        videoWrapper.addEventListener('mouseenter', function() {
-          // Pause all other videos first
-          players.forEach(function(p) {
-            if (p !== player) {
-              p.pause().catch(function(err) {
-                console.log('Pause error:', err);
-              });
-            }
-          });
-          
-          // Play current video
-          player.play().catch(function(err) {
-            console.log('Play error:', err);
-          });
-          
-          currentlyPlaying = player;
-        });
-        
-        // Mouse leave - Pause
-        videoWrapper.addEventListener('mouseleave', function() {
-          player.pause().catch(function(err) {
-            console.log('Pause error:', err);
-          });
-          
-          if (currentlyPlaying === player) {
-            currentlyPlaying = null;
-          }
-        });
-        
-      } 
-      // Mobile: Tap to toggle
-      else {
-        let isPlaying = false;
-        
-        videoWrapper.addEventListener('click', function() {
-          // Pause all other videos
-          players.forEach(function(p, i) {
-            if (i !== index) {
-              p.pause().catch(function(err) {});
-            }
-          });
-          
-          // Toggle current video
-          if (isPlaying) {
-            player.pause().catch(function(err) {});
-            isPlaying = false;
-          } else {
-            player.play().catch(function(err) {});
-            isPlaying = true;
-            currentlyPlaying = player;
-          }
-        });
-      }
-    });
-
-    console.log('Portfolio videos initialized: ' + players.length);
-  });
-</script>
     
 </body>
 </html>
