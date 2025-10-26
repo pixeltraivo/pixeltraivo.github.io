@@ -1329,3 +1329,25 @@ ul {
     padding: 25px;
   }
 }
+
+
+/* ==================== ULTRA FAST HOVER - GLOBAL OVERRIDE ==================== */
+* {
+  transition-duration: 0.15s !important;
+}
+
+/* Exceptions - These can stay slower */
+.preloader,
+.fade-in-up,
+.fade-in-left,
+.fade-in-right,
+.scale-in,
+.testimonials-track,
+#animated-text {
+  transition-duration: 0.8s !important;
+}
+
+/* Button ripple effect - keep at 0.4s */
+.btn::before {
+  transition-duration: 0.4s !important;
+}
