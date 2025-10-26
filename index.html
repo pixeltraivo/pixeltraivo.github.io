@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PixelTraivo - Professional Video Editor & Motion Designer</title>
-  <meta name="description" content="PixelTraivo - Premium video editing, motion graphics, and color grading services. Transforming your vision into cinematic reality.">
+  <title>PixelTraivo® | Professional Video Editor & Motion Designer</title>
+  <meta name="description" content="PixelTraivo® - Premium video editing, motion graphics, and color grading services. 100+ projects delivered. Fast turnaround. Professional quality.">
+  <meta name="keywords" content="video editing, motion graphics, color grading, vfx, video editor, pixeltraivo">
   
   <!-- Favicon -->
   <link rel="icon" href="assets/images/Logo.webp">
+  
+  <!-- Preconnect for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://player.vimeo.com">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,8 +21,8 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
   
-  <!-- Vimeo Player -->
-  <script src="https://player.vimeo.com/api/player.js"></script>
+  <!-- Vimeo Player (Deferred for faster load) -->
+  <script src="https://player.vimeo.com/api/player.js" defer></script>
 </head>
 <body>
 
@@ -28,37 +34,44 @@
     </div>
   </div>
 
-<!-- Navigation (Updated with "Work") -->
-<nav class="nav" id="navbar">
-  <div class="nav-container">
-    <a href="#home" class="nav-logo">
-      <img src="assets/images/Logo.webp" alt="PixelTraivo">
-    </a>
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#showreel" class="nav-link">Showreel</a></li>
-      <li><a href="#services" class="nav-link">Services</a></li>
-      <li><a href="#work" class="nav-link">Work</a></li>
-      <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-      <li><a href="store.html" class="nav-link nav-store">Store</a></li>
-    </ul>
-    <div class="nav-toggle" id="navToggle">
-      <span></span>
-      <span></span>
-      <span></span>
+  <!-- Navigation -->
+  <nav class="nav" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <img src="assets/images/Logo.webp" alt="PixelTraivo Logo">
+        <span class="logo-text">PixelTraivo<sup>®</sup></span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#showreel" class="nav-link">Showreel</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="store.html" class="nav-link nav-store">🛒 Store</a></li>
+      </ul>
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-container">
       
       <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          Available for Projects
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Available for Projects
+          </div>
+          <div class="hero-badge verified">
+            <span class="verified-icon">✓</span>
+            Verified Professional
+          </div>
         </div>
 
         <h1 class="hero-title">
@@ -131,6 +144,7 @@
                     frameborder="0" 
                     allow="autoplay; fullscreen; picture-in-picture" 
                     allowfullscreen
+                    loading="lazy"
                     id="showreelPlayer"></iframe>
           </div>
         </div>
@@ -139,7 +153,7 @@
     </div>
   </section>
 
-  <!-- Services Section - Enhanced (Without Tools) -->
+  <!-- Services Section -->
   <section class="services" id="services">
     <div class="container">
       
@@ -149,10 +163,11 @@
         <p class="section-subtitle">Comprehensive video production solutions tailored to your needs</p>
       </div>
 
-      <!-- Main Services Grid (4 Cards) -->
+      <!-- Main Services Grid -->
       <div class="services-grid">
         
-        <div class="service-card">
+        <div class="service-card featured">
+          <span class="service-tag popular">Most Popular</span>
           <div class="service-icon">🎬</div>
           <h3>Video Editing</h3>
           <p>Professional editing for commercials, documentaries, social media content, and more.</p>
@@ -164,6 +179,7 @@
         </div>
 
         <div class="service-card">
+          <span class="service-tag premium">Premium</span>
           <div class="service-icon">🎨</div>
           <h3>Motion Graphics</h3>
           <p>Eye-catching animations, title sequences, and dynamic visual elements.</p>
@@ -175,6 +191,7 @@
         </div>
 
         <div class="service-card">
+          <span class="service-tag expert">Expert</span>
           <div class="service-icon">🎞️</div>
           <h3>Color Grading</h3>
           <p>Cinematic color correction and grading to enhance your footage.</p>
@@ -186,6 +203,7 @@
         </div>
 
         <div class="service-card">
+          <span class="service-tag pro">Professional</span>
           <div class="service-icon">📹</div>
           <h3>Documentary Editing</h3>
           <p>Compelling narrative editing for documentaries and story-driven content.</p>
@@ -198,28 +216,32 @@
 
       </div>
 
-      <!-- Additional Services (4 Small Cards) -->
+      <!-- Additional Services -->
       <div class="services-grid-extended">
         
         <div class="service-card-small">
+          <span class="service-tag-small trending">Advanced</span>
           <div class="service-icon-small">✨</div>
           <h4>VFX & Visual Effects</h4>
           <p>Green screen, compositing, and special effects</p>
         </div>
 
         <div class="service-card-small">
+          <span class="service-tag-small trending">Trending</span>
           <div class="service-icon-small">📱</div>
           <h4>Social Media Edits</h4>
           <p>Reels, TikToks, and short-form content</p>
         </div>
 
         <div class="service-card-small">
+          <span class="service-tag-small popular">Popular</span>
           <div class="service-icon-small">🎥</div>
           <h4>YouTube Content</h4>
           <p>Long-form YouTube video editing</p>
         </div>
 
         <div class="service-card-small">
+          <span class="service-tag-small premium">Premium</span>
           <div class="service-icon-small">💍</div>
           <h4>Event Videos</h4>
           <p>Weddings, corporate events, highlights</p>
@@ -229,7 +251,7 @@
 
       <!-- Why Choose Me Section -->
       <div class="why-choose">
-        <h3>Why Choose PixelTraivo?</h3>
+        <h3>Why Choose PixelTraivo<sup>®</sup>?</h3>
         <div class="benefits-grid">
           
           <div class="benefit-item">
@@ -262,7 +284,7 @@
     </div>
   </section>
 
-  <!-- Portfolio Section (Horizontal Scroll) -->
+  <!-- Portfolio Section -->
   <section class="portfolio" id="work">
     <div class="container-full">
       
@@ -284,6 +306,7 @@
                         frameborder="0" 
                         allow="autoplay; fullscreen; picture-in-picture" 
                         allowfullscreen
+                        loading="lazy"
                         class="portfolio-video"></iframe>
               </div>
             </div>
@@ -302,6 +325,7 @@
                         frameborder="0" 
                         allow="autoplay; fullscreen; picture-in-picture" 
                         allowfullscreen
+                        loading="lazy"
                         class="portfolio-video"></iframe>
               </div>
             </div>
@@ -320,6 +344,7 @@
                         frameborder="0" 
                         allow="autoplay; fullscreen; picture-in-picture" 
                         allowfullscreen
+                        loading="lazy"
                         class="portfolio-video"></iframe>
               </div>
             </div>
@@ -338,6 +363,7 @@
                         frameborder="0" 
                         allow="autoplay; fullscreen; picture-in-picture" 
                         allowfullscreen
+                        loading="lazy"
                         class="portfolio-video"></iframe>
               </div>
             </div>
@@ -351,11 +377,12 @@
           <div class="portfolio-card">
             <div class="video-frame">
               <div style="padding:177.78% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/1130573685?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&title=0&byline=0&portrait=0&loop=1" 
+                <iframe src="https://player.vimeo.com/video/1130573685?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&loop=1" 
                         style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;" 
                         frameborder="0" 
                         allow="autoplay; fullscreen; picture-in-picture" 
                         allowfullscreen
+                        loading="lazy"
                         class="portfolio-video"></iframe>
               </div>
             </div>
@@ -369,11 +396,12 @@
           <div class="portfolio-card">
             <div class="video-frame">
               <div style="padding:177.78% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/1130573519?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&title=0&byline=0&portrait=0&loop=1" 
+                <iframe src="https://player.vimeo.com/video/1130573519?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&loop=1" 
                         style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;" 
                         frameborder="0" 
                         allow="autoplay; fullscreen; picture-in-picture" 
                         allowfullscreen
+                        loading="lazy"
                         class="portfolio-video"></iframe>
               </div>
             </div>
@@ -404,13 +432,23 @@
         <p class="section-subtitle">Don't just take my word for it</p>
       </div>
 
+      <!-- Overall Rating -->
+      <div class="overall-rating">
+        <div class="rating-score">5.0</div>
+        <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+        <p class="rating-text">Based on 20+ client reviews</p>
+      </div>
+
       <div class="testimonials-wrapper">
         <div class="testimonials-track">
           
           <!-- Testimonial 1 -->
           <div class="testimonial-card">
-            <div class="testimonial-rating">
-              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            <div class="testimonial-header">
+              <div class="testimonial-rating">
+                <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+              </div>
+              <span class="verified-badge">✓ Verified</span>
             </div>
             <p class="testimonial-text">
               "Praveen's editing skills transformed our brand videos. The attention to detail and creativity is outstanding!"
@@ -426,8 +464,11 @@
 
           <!-- Testimonial 2 -->
           <div class="testimonial-card">
-            <div class="testimonial-rating">
-              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            <div class="testimonial-header">
+              <div class="testimonial-rating">
+                <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+              </div>
+              <span class="verified-badge">✓ Verified</span>
             </div>
             <p class="testimonial-text">
               "Professional, creative, and always delivers on time. Highly recommend for any video project!"
@@ -443,8 +484,11 @@
 
           <!-- Testimonial 3 -->
           <div class="testimonial-card">
-            <div class="testimonial-rating">
-              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            <div class="testimonial-header">
+              <div class="testimonial-rating">
+                <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+              </div>
+              <span class="verified-badge">✓ Verified</span>
             </div>
             <p class="testimonial-text">
               "Exceptional motion graphics work! Praveen understood our vision perfectly and exceeded expectations."
@@ -460,8 +504,11 @@
 
           <!-- Testimonial 4 -->
           <div class="testimonial-card">
-            <div class="testimonial-rating">
-              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            <div class="testimonial-header">
+              <div class="testimonial-rating">
+                <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+              </div>
+              <span class="verified-badge">✓ Verified</span>
             </div>
             <p class="testimonial-text">
               "Outstanding video editing and color grading! Praveen's work elevated our content to a whole new level."
@@ -477,8 +524,11 @@
 
           <!-- Testimonial 5 -->
           <div class="testimonial-card">
-            <div class="testimonial-rating">
-              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            <div class="testimonial-header">
+              <div class="testimonial-rating">
+                <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+              </div>
+              <span class="verified-badge">✓ Verified</span>
             </div>
             <p class="testimonial-text">
               "Amazing experience working with Praveen! Fast turnaround, creative ideas, and top-notch quality every time."
@@ -494,8 +544,11 @@
 
           <!-- Duplicates for infinite scroll -->
           <div class="testimonial-card">
-            <div class="testimonial-rating">
-              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            <div class="testimonial-header">
+              <div class="testimonial-rating">
+                <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+              </div>
+              <span class="verified-badge">✓ Verified</span>
             </div>
             <p class="testimonial-text">
               "Praveen's editing skills transformed our brand videos. The attention to detail and creativity is outstanding!"
@@ -510,8 +563,11 @@
           </div>
 
           <div class="testimonial-card">
-            <div class="testimonial-rating">
-              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            <div class="testimonial-header">
+              <div class="testimonial-rating">
+                <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+              </div>
+              <span class="verified-badge">✓ Verified</span>
             </div>
             <p class="testimonial-text">
               "Professional, creative, and always delivers on time. Highly recommend for any video project!"
@@ -526,8 +582,11 @@
           </div>
 
           <div class="testimonial-card">
-            <div class="testimonial-rating">
-              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+            <div class="testimonial-header">
+              <div class="testimonial-rating">
+                <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+              </div>
+              <span class="verified-badge">✓ Verified</span>
             </div>
             <p class="testimonial-text">
               "Exceptional motion graphics work! Praveen understood our vision perfectly and exceeded expectations."
@@ -564,34 +623,61 @@
           <h3>Contact Information</h3>
           
           <div class="contact-item">
-            <div class="contact-icon">📱</div>
+            <div class="contact-icon whatsapp-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="#25D366"/>
+              </svg>
+            </div>
             <div class="contact-details">
               <h4>WhatsApp</h4>
               <a href="https://wa.me/918815720085" target="_blank">+91 88157 20085</a>
+              <span class="contact-badge fastest">Fastest Response</span>
             </div>
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">📧</div>
+            <div class="contact-icon email-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EA4335"/>
+              </svg>
+            </div>
             <div class="contact-details">
               <h4>Email</h4>
               <a href="mailto:pixeltraivo@gmail.com">pixeltraivo@gmail.com</a>
+              <span class="contact-badge professional">Professional Inquiries</span>
             </div>
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">💬</div>
+            <div class="contact-icon telegram-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" fill="#0088cc"/>
+              </svg>
+            </div>
             <div class="contact-details">
               <h4>Telegram</h4>
               <a href="https://t.me/pixeltraivo" target="_blank">@pixeltraivo</a>
+              <span class="contact-badge quick">Quick Chat</span>
             </div>
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">📸</div>
+            <div class="contact-icon instagram-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <defs>
+                  <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#FD5949;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#D6249F;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#285AEB;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="url(#instagram-gradient)"/>
+              </svg>
+            </div>
             <div class="contact-details">
               <h4>Instagram</h4>
               <a href="https://www.instagram.com/PIXELTRAIVO" target="_blank">@PIXELTRAIVO</a>
+              <span class="contact-badge portfolio">Portfolio Updates</span>
             </div>
           </div>
 
@@ -600,6 +686,9 @@
         <!-- Contact Form -->
         <div class="contact-form-wrapper">
           <form class="contact-form" action="https://formspree.io/f/xyznrknv" method="POST">
+            
+            <!-- Honeypot for spam protection -->
+            <input type="text" name="_gotcha" style="display:none">
             
             <div class="form-group">
               <label for="name">Your Name</label>
@@ -617,6 +706,8 @@
             </div>
 
             <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+            
+            <p class="form-privacy">🔒 Your information is secure and will never be shared</p>
 
           </form>
         </div>
@@ -627,47 +718,47 @@
   </section>
 
   <!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    
-    <div class="footer-content">
+  <footer class="footer">
+    <div class="container">
       
-      <div class="footer-brand">
-        <img src="assets/images/Logo.webp" alt="PixelTraivo" class="footer-logo">
-        <p>Crafting visual stories that resonate</p>
+      <div class="footer-content">
+        
+        <div class="footer-brand">
+          <img src="assets/images/Logo.webp" alt="PixelTraivo" class="footer-logo">
+          <p>Crafting visual stories that resonate</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#showreel">Showreel</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="store.html">Store</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>pixeltraivo@gmail.com</p>
+          <p>+91 88157 20085</p>
+        </div>
+
       </div>
 
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#showreel">Showreel</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="store.html">Store</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p>pixeltraivo@gmail.com</p>
-        <p>+91 88157 20085</p>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PixelTraivo<sup>®</sup>. All rights reserved.</p>
+        <p>Made with <span class="heart">❤️</span> for Creative Storytelling</p>
       </div>
 
     </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2025 PixelTraivo. All rights reserved.</p>
-      <p>Made with <span class="heart">❤️</span> for Creative Storytelling</p>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
   <!-- Back to Top -->
-  <button class="back-to-top" id="backToTop">
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>

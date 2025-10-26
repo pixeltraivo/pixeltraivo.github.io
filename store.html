@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PixelTraivo Store - Free Tools & LUTs Collection</title>
+  <title>PixelTraivo® Store - Free Tools & LUTs Collection</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Free YouTube downloader, FREE professional LUTs collection, and editing tools by PixelTraivo. Download videos in 4K quality and get cinematic color grading LUTs.">
+  <meta name="description" content="Free YouTube downloader, professional LUTs collection, and editing tools by PixelTraivo®. Download videos in 4K quality and get cinematic color grading LUTs.">
   <meta name="keywords" content="YouTube downloader, free video downloader, 4K video download, MP3 extractor, free LUTs, color grading, cinematic LUTs, PixelTraivo">
   
   <!-- Favicon -->
   <link rel="shortcut icon" href="assets/images/Logo.webp" type="image/x-icon" />
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -110,6 +114,10 @@
     }
 
     @media (max-width: 768px) {
+      .logo-text {
+        display: none;
+      }
+      
       .features-grid {
         grid-template-columns: 1fr !important;
       }
@@ -136,11 +144,12 @@
 </head>
 <body>
 
-  <!-- Navigation (Matching Main Site) -->
+  <!-- Navigation (UPDATED) -->
   <nav class="nav" id="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <img src="assets/images/Logo.webp" alt="PixelTraivo">
+        <img src="assets/images/Logo.webp" alt="PixelTraivo Logo">
+        <span class="logo-text">PixelTraivo<sup>®</sup></span>
       </a>
       <ul class="nav-menu" id="navMenu">
         <li><a href="index.html#home" class="nav-link">Home</a></li>
@@ -149,7 +158,7 @@
         <li><a href="index.html#work" class="nav-link">Work</a></li>
         <li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
         <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-        <li><a href="store.html" class="nav-link nav-store">Store</a></li>
+        <li><a href="store.html" class="nav-link nav-store">🛒 Store</a></li>
       </ul>
       <div class="nav-toggle" id="navToggle">
         <span></span>
@@ -170,7 +179,7 @@
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 50%, rgba(255, 107, 53, 0.05), transparent 70%); pointer-events: none;"></div>
       
       <div class="container" style="position: relative; z-index: 1; text-align: center;">
-        <span class="section-tag">🛍️ PixelTraivo Store</span>
+        <span class="section-tag">🛍️ PixelTraivo® Store</span>
         <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin: 20px 0; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
           Free Tools & Resources
         </h1>
@@ -188,7 +197,7 @@
     </section>
 
     <!-- ============================================ -->
-    <!-- FREE TOOLS SECTION -->
+    <!-- FREE TOOLS SECTION - COMPLETE -->
     <!-- ============================================ -->
     <section id="free-tools" style="padding: var(--spacing) 20px; background: var(--secondary);">
       
@@ -357,7 +366,7 @@
     </section>
 
     <!-- ============================================ -->
-    <!-- FREE LUTS COLLECTION - ALL 8 CARDS -->
+    <!-- FREE LUTS COLLECTION - ALL 8 CARDS - COMPLETE -->
     <!-- ============================================ -->
     <section id="luts-collection" style="padding: var(--spacing) 20px; background: var(--dark);">
       
@@ -568,7 +577,7 @@
     </section>
 
     <!-- ============================================ -->
-    <!-- COMING SOON - ALL 4 CARDS -->
+    <!-- COMING SOON - ALL 4 CARDS - COMPLETE -->
     <!-- ============================================ -->
     <section id="coming-soon" style="padding: var(--spacing) 20px; background: var(--secondary);">
       
@@ -673,7 +682,7 @@
 
   </div>
 
-  <!-- Footer (Matching Main Site) -->
+  <!-- Footer (UPDATED) -->
   <footer class="footer">
     <div class="container">
       
@@ -706,7 +715,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2025 PixelTraivo. All rights reserved.</p>
+        <p>&copy; 2025 PixelTraivo<sup>®</sup>. All rights reserved.</p>
         <p>Made with <span class="heart">❤️</span> for Creative Storytelling</p>
       </div>
 
@@ -714,7 +723,7 @@
   </footer>
 
   <!-- Back to Top -->
-  <button class="back-to-top" id="backToTop">
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
