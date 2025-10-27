@@ -5,19 +5,19 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://pixeltraivo.com/</loc>
+    <loc>https://praveensingh.pro/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://pixeltraivo.com/assets/images/Logo.webp</image:loc>
+      <image:loc>https://praveensingh.pro/assets/images/Logo.webp</image:loc>
       <image:title>PixelTraivo® Professional Video Editor Logo</image:title>
     </image:image>
   </url>
 
   <!-- Store Page -->
   <url>
-    <loc>https://pixeltraivo.com/store.html</loc>
+    <loc>https://praveensingh.pro/store.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -25,35 +25,35 @@
 
   <!-- Section Links -->
   <url>
-    <loc>https://pixeltraivo.com/#showreel</loc>
+    <loc>https://praveensingh.pro/#showreel</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://pixeltraivo.com/#services</loc>
+    <loc>https://praveensingh.pro/#services</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://pixeltraivo.com/#work</loc>
+    <loc>https://praveensingh.pro/#work</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://pixeltraivo.com/#testimonials</loc>
+    <loc>https://praveensingh.pro/#testimonials</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://pixeltraivo.com/#contact</loc>
+    <loc>https://praveensingh.pro/#contact</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
