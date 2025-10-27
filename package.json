@@ -1,0 +1,27 @@
+{
+  "name": "pixeltraivo.github.io",
+  "version": "1.0.0",
+  "description": "PixelTraivo® - Award-Winning Creative Digital Design & Development Agency",
+  "scripts": {
+    "minify:css": "cleancss -o style.min.css style.css",
+    "minify:js": "terser script.js -o script.min.js -c -m",
+    "minify:html": "html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true index.html -o index.html",
+    "build": "npm run minify:css && npm run minify:js && npm run minify:html",
+    "update-refs": "sed -i '' 's/style.css/style.min.css/g; s/script.js/script.min.js/g' index.html",
+    "build:full": "npm run build && npm run update-refs"
+  },
+  "keywords": [
+    "pixeltraivo",
+    "design",
+    "development",
+    "agency",
+    "creative"
+  ],
+  "author": "PixelTraivo",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "html-minifier": "^4.0.0",
+    "terser": "^5.44.0"
+  }
+}
