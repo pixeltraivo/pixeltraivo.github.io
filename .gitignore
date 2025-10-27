@@ -1,6 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build files (if you want to build them fresh each time)
+# *.min.css
+# *.min.js
+
+# OS files
 .DS_Store
-.DS_Store
-.DS_Store
-.DS_Store
-.DS_Store
-.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.local
