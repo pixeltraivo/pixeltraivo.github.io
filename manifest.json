@@ -1,0 +1,45 @@
+{
+  "name": "PixelTraivo® - Professional Video Editor & Motion Designer",
+  "short_name": "PixelTraivo",
+  "description": "Professional video editing, motion graphics, color grading, and VFX services by Praveen Singh (PixelTraivo®). 5-star rated with 100+ successful projects.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#ff6b35",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/images/Logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/Logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "entertainment", "productivity", "photo", "video"],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Showreel",
+      "short_name": "Showreel",
+      "description": "Watch professional video editing showreel",
+      "url": "/#showreel",
+      "icons": [{ "src": "/assets/images/Logo.webp", "sizes": "192x192" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch for video editing services",
+      "url": "/#contact",
+      "icons": [{ "src": "/assets/images/Logo.webp", "sizes": "192x192" }]
+    }
+  ]
+}
