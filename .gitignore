@@ -1,9 +1,6 @@
 # Dependencies
 node_modules/
-
-# Build files (if you want to build them fresh each time)
-# *.min.css
-# *.min.js
+package-lock.json
 
 # OS files
 .DS_Store
